@@ -1,4 +1,4 @@
-# Feathers & webix-vue or framework7-vue starter kit
+# Feathers Starter Kit & BYO (bring your own client)
 
 > app dev made easy
 
@@ -9,13 +9,13 @@ docs like in: http://vuejs-templates.github.io/webpack/
 There are two package.json files in this project, one in ./ and one in ./server/
 ./package.json is used for the client dependencies and npm scripts
 ./server/package.json is used for the server dependencies. Most other props are copied from ./package.json
-- client dependencies are installed as devDependencies in ./
+- client dependencies are installed as devDependencies in ../app-client
 - server dependencies are installled as dependencies in ./server
 
 
 # Development Workflow
 
-run dev server on localhost:7777 (or whatever devServer you choose in ./package.json)
+run dev server on localhost:8888 (or whatever devServer you choose in ./package.json)
 ``` sh
 npm run dev
 ```
