@@ -4,7 +4,7 @@
   "author": "akralj <dev@kralj.de>",
   "description": "your desc",
   "config": {
-    "appPort": 7777,
+    "appPort": 8888,
     "devServer": "localhost",
     "prodServer": "prodServer",
     "prodServerSsh": "user@server"
