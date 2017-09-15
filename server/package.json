@@ -1,0 +1,33 @@
+{
+  "name": "app-name",
+  "version": "0.0.1",
+  "author": "akralj <dev@kralj.de>",
+  "description": "your desc",
+  "config": {
+    "appPort": 7777,
+    "devServer": "localhost",
+    "prodServer": "prodServer",
+    "prodServerSsh": "user@server"
+  },
+  "private": true,
+  "dependencies": {
+    "axios": "latest",
+    "body-parser": "latest",
+    "coffeescript": "^2.0.0-beta5",
+    "compression": "latest",
+    "cors": "latest",
+    "feathers": "latest",
+    "feathers-errors": "latest",
+    "feathers-hooks": "latest",
+    "feathers-hooks-common": "latest",
+    "feathers-mongodb": "latest",
+    "feathers-nedb": "latest",
+    "feathers-rest": "latest",
+    "feathers-socketio": "latest",
+    "joi": "latest",
+    "lodash-mixins": "github:akralj/lodash-mixins",
+    "mongodb": "latest",
+    "nedb": "latest",
+    "winston": "latest"
+  }
+}

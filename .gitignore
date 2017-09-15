@@ -1,0 +1,9 @@
+.DS_Store
+.tern-port
+debug
+client
+node_modules
+npm-debug.log
+db
+server/public
+server/services/data/lib/getData
