@@ -31,7 +31,7 @@
     "stagingUpload": "rsync -avh --stats --delete server/public/ /usr/local/var/www/"
   },
   "devDependencies": {
-    "coffeescript": "^2.0.0-beta5",
+    "coffeescript": "^2.0.0",
     "fs-extra": "latest",
     "glob": "latest",
     "html-inline": "latest",

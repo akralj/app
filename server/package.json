@@ -13,7 +13,7 @@
   "dependencies": {
     "axios": "latest",
     "body-parser": "latest",
-    "coffeescript": "^2.0.0-beta5",
+    "coffeescript": "^2.0.0",
     "compression": "latest",
     "cors": "latest",
     "feathers": "latest",
