@@ -3,12 +3,6 @@
   "version": "0.0.1",
   "author": "akralj <dev@kralj.de>",
   "description": "your desc",
-  "config": {
-    "appPort": 8888,
-    "devServer": "localhost",
-    "prodServer": "prodServer",
-    "prodServerSsh": "user@server"
-  },
   "private": true,
   "dependencies": {
     "axios": "latest",

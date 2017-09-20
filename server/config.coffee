@@ -6,15 +6,13 @@ _           = require("lodash-mixins")
 npmPackage  = require("./package.json")
 appName     = npmPackage.name
 appRoot     = "/apps/#{appName}"
-appPort     = npmPackage.config.appPort
-devServer   = npmPackage.config.devServer
-prodServer  = npmPackage.config.prodServer
+appPort     = 8888
+
 
 config =
   appName: appName
   appRoot: appRoot
   appPort: appPort
-  serverName: prodServer
   clientCode: "#{appRoot}/server/public"
 
   # configure database server here. default is nedb in dev & test and mongodb in production
@@ -40,7 +38,6 @@ config =
 module.exports = (env) ->
   if env is "development"
     development =
-      serverName: devServer
       clientCode: "./server/public"
       dbRoot: "./db"
       db: "nedb"
@@ -48,7 +45,6 @@ module.exports = (env) ->
 
   else if env is "testing"
     testing=
-      serverName: devServer
       appPort: appPort + 9
       dbRoot: "./test/db"
       db: "nedb"

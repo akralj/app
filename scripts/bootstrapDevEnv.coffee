@@ -9,7 +9,7 @@ fs    = require('fs-extra')
 # sync package.json
 ###################################################################################################
 # add props you want to see in ./server/package.json here
-propsToOverwrite = ["name", "version", "author", "description", "config"]
+propsToOverwrite = ["name", "version", "author", "description"]
 
 json        = require("../package.json")
 jsonServer  = require("../server/package.json")

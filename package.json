@@ -4,9 +4,6 @@
   "author": "akralj <dev@kralj.de>",
   "description": "your desc",
   "config": {
-    "appPort": 8888,
-    "devServer": "localhost",
-    "prodServer": "prodServer",
     "prodServerSsh": "user@server"
   },
   "private": true,
@@ -39,8 +36,5 @@
     "supervisor": "latest",
     "tap": "latest",
     "tap-spec": "latest"
-  },
-  "dependencies": {
-    "babel-minify-webpack-plugin": "^0.2.0"
   }
 }
