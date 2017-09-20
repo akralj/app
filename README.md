@@ -6,29 +6,30 @@ docs like in: http://vuejs-templates.github.io/webpack/
 
 
 # Note:
-There are two package.json files in this project, one in ./ and one in ./server/
-./package.json is used for the client dependencies and npm scripts
+There are 3 package.json files in this project, in ./  one, ./client/ and ./server/
+./package.json is used to build tools and npm scripts
+./client/package.json is used for the client dependencies
 ./server/package.json is used for the server dependencies. Most other props are copied from ./package.json
-- client dependencies are installed as devDependencies in ../app-client
+- client dependencies are installed as devDependencies in ../client
 - server dependencies are installled as dependencies in ./server
 
 
 # Development Workflow
 
-run dev server on devServer:7777 (or whatever devServer you choose in ./package.json)
+run dev server
 ``` sh
 npm run dev
 ```
 
-build and run "production" code on staging server on devServer:8888
-useful for testing offline version, devServer:8888/app.html
+build and run "production" code on staging server on devServer:7778
+useful for testing offline version, devServer:7778/app.html
 ``` sh
 npm run stage
 ```
 
 # Production Workflow
 ### Step 0
-change server/package.json version: to new release, eg. from release-0.1.1 to release-0.1.2
+change ./package.json version: to new release, eg. from release-0.1.1 to release-0.1.2
 gca "release-x.x.x - your comment"
 
 ### Step 1
@@ -38,7 +39,7 @@ run development instance
 npm run dev &
 npm run stage
 ```
-go to http://devServer:8888, /app.html
+go to http://devServer:7778, /app.html
 do manual tests from trello
 
 ### Step 2
@@ -50,7 +51,7 @@ npm run deploy
 ```
 - build and copy client app to server/public
 - rsync ./server to production server (prodServerName) (including node_modules, etc)
-- stop and start app-contacts (systemd) on production server
+- stop and start app-{{appName}} (systemd) on production server
 
 ### Step 3
 

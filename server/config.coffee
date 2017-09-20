@@ -6,7 +6,7 @@ _           = require("lodash-mixins")
 npmPackage  = require("./package.json")
 appName     = npmPackage.name
 appRoot     = "/apps/#{appName}"
-appPort     = 8888
+appPort     = 7778
 
 
 config =
