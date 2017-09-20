@@ -1,24 +1,30 @@
 # TODO build client files here
-# Collects all files in srcDir, apart from index.html
-# writes appcache
+# Collects all files in destDir, apart from index.html & writes appcache
 
 
 fs      = require('fs-extra')
 glob    = require("glob")
 
 now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
-srcDir  = "./client/dist"
 destDir = "./server/public"
 
 # sync ./package.json and ./server/package.json
 require("./bootstrapDevEnv")
 
+# 1. cleanup directory
+fs.emptyDirSync(destDir)
 
-glob "#{srcDir}/**/*.*", {}, (err, files) ->
+# 2. copy client files to public
+fs.copySync("client/index.html", "server/public/index.html")
+fs.copySync("client/dist/", "server/public/dist/")
+fs.copySync("client/static/", "server/public/static/")
+
+
+glob "#{destDir}/**/*.*", {}, (err, files) ->
   if files
     appCacheFiles = files
       .filter (file) -> not file.match(/index.html/)
-      .map (file) -> file.replace(srcDir, "")
+      .map (file) -> file.replace(destDir, "")
       .join("\n")
 
     # add resources which need to be cached here
@@ -36,15 +42,6 @@ glob "#{srcDir}/**/*.*", {}, (err, files) ->
       FALLBACK:
       / /app.html
     """
-
-    # 1. cleanup directory
-    fs.emptyDirSync(destDir)
-
-    # 2. copy client files to public
-    fs.copySync("client/index.html", "server/public/index.html")
-    fs.copySync("client/dist/", "server/public/dist/")
-    fs.copySync("client/static/", "server/public/static/")
-
 
     # 3. write appcache file
     console.log "generated appcache: #{new Date}"
