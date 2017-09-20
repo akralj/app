@@ -13,21 +13,21 @@
   "scripts": {
     "start": "npm run dev",
     "postinstall": "npm-run-all --parallel installClient installServer",
-    "installClient": "cd ../app-client && npm install",
+    "installClient": "cd ./client && npm install",
     "installServer": "cd server && npm install --only=production",
     "predev": "coffee scripts/bootstrapDevEnv.coffee",
     "dev": "npm-run-all --parallel client server",
     "test": "watch 'npm run test-unit' test server --wait 0",
-    "stage": "npm-run-all createProductionApp startStagingServer",
-    "deploy": "npm-run-all createProductionApp upload restartService",
-    "client": "cd ../app-client && npm run dev",
+    "buildClient": "cd ./client && npm run build",
+    "stage": "npm-run-all buildClient createProductionApp",
+    "deploy": "npm-run-all buildClient createProductionApp upload restartService",
+    "client": "cd ./client && npm run dev",
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
     "test-unit": "coffee test/index.coffee | tap-spec",
     "createProductionApp": "coffee scripts/createProductionApp.coffee",
-    "inlineAssets": "html-inline -i ../app-client/dist/index.html -o server/public/index.html",
+    "inlineAssets": "html-inline -i ./client/dist/index.html -o server/public/index.html",
     "upload": "rsync -avh --stats --delete server/ $npm_package_config_prodServerSsh:/apps/telefonbuch/server/",
     "restartService": "ssh $npm_package_config_prodServerSsh 'sudo systemctl stop app-telefonbuch; sudo systemctl start app-telefonbuch'",
-    "startStagingServer": "http-server server/public -p 5555 --proxy http://localhost:7777",
     "stagingUpload": "rsync -avh --stats --delete server/public/ /usr/local/var/www/"
   },
   "devDependencies": {
@@ -39,5 +39,8 @@
     "supervisor": "latest",
     "tap": "latest",
     "tap-spec": "latest"
+  },
+  "dependencies": {
+    "babel-minify-webpack-plugin": "^0.2.0"
   }
 }

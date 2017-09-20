@@ -40,8 +40,11 @@ glob "#{srcDir}/**/*.*", {}, (err, files) ->
     # 1. cleanup directory
     fs.emptyDirSync(destDir)
 
-    # 2. copy dist to public
-    fs.copySync("client/dist/", "server/public/")
+    # 2. copy client files to public
+    fs.copySync("client/index.html", "server/public/index.html")
+    fs.copySync("client/dist/", "server/public/dist/")
+    fs.copySync("client/static/", "server/public/static/")
+
 
     # 3. write appcache file
     console.log "generated appcache: #{new Date}"

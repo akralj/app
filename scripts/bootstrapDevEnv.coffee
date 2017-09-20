@@ -19,6 +19,9 @@ for prop in propsToOverwrite
 
 fs.writeFileSync("./server/package.json", JSON.stringify(jsonServer, null, 2) )
 
+return
+
+# maybe some font coping is need, so we lieave this code here
 
 ###################################################################################################
 # copy fonts from webix/fonts to client/dist/fonts

@@ -18,7 +18,7 @@ config =
   clientCode: "#{appRoot}/server/public"
 
   # configure database server here. default is nedb in dev & test and mongodb in production
-  db:     "mongodb" # ["nedb", "mongodb"]
+  db: "mongodb" # ["nedb", "mongodb"]
   dbPath: "mongodb://localhost:27017"
   dbRoot: "#{appRoot}/db" # for nedb
 
@@ -41,7 +41,7 @@ module.exports = (env) ->
   if env is "development"
     development =
       serverName: devServer
-      clientCode: "./client/dist"
+      clientCode: "./server/public"
       dbRoot: "./db"
       db: "nedb"
     _.merge(config, development)
@@ -49,8 +49,8 @@ module.exports = (env) ->
   else if env is "testing"
     testing=
       serverName: devServer
-      appPort:    appPort + 9
-      dbRoot:     "./test/db"
+      appPort: appPort + 9
+      dbRoot: "./test/db"
       db: "nedb"
     _.merge(config, testing)
 
