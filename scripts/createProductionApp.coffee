@@ -1,4 +1,5 @@
 # TODO build client files here
+# adds style.css
 # Collects all files in destDir, apart from index.html & writes appcache
 
 
@@ -50,9 +51,13 @@ glob "#{destDir}/**/*.*", {}, (err, files) ->
     # 4. write appcache enabled app.html
     indexHtml = fs.readFileSync "#{destDir}/index.html", "utf8"
 
+    # 5. add style.css
+    indexHtml = indexHtml.replace('</head>', '  <link rel="stylesheet" href="./dist/style.css">\n  </head>')
+    fs.writeFileSync "#{destDir}/index.html", indexHtml
+      
     # 5. build offline app with appcache enabled
-    indexHtml = indexHtml
-      .replace('<html lang="de">', """<html lang="de" manifest="/#{now}.appcache">""")
+    indexHtml = indexHtml.replace('<html lang="de">', """<html lang="de" manifest="/#{now}.appcache">""")
+
     fs.writeFileSync "#{destDir}/app.html", indexHtml
 
   else
