@@ -5,6 +5,24 @@
 docs like in: http://vuejs-templates.github.io/webpack/
 
 
+## First steps
+- change name, version, description, author & config in package.json -> this will be used in server/config.coffee
+- change appPort to production port,... in server/config.coffee to match your enviroment
+- start with a fresh git repo
+``` sh
+rm -rf .git
+git init
+git add .
+git commit -am "initial commit"
+# add your own remote origin
+git remote set-url origin ssh://git@YourSourcecodeServer/projectName/appName.git
+git push origin
+```
+
+## Prepare Production Server
+- see docs/deploy.md
+
+
 # Note:
 There are 3 package.json files in this project, in ./  one, ./client/ and ./server/
 ./package.json is used to build tools and npm scripts

@@ -1,0 +1,15 @@
+[Unit]
+Description=your desc
+Documentation=link-to-docs, e.g. https://confluence.dioezese-linz.at/confluence/x/QgDu
+[Service]
+ExecStart=/apps/{{appName}}/server/node_modules/coffeescript/bin/coffee /apps/{{appName}}/server/index.coffee
+Restart=always
+StandardOutput=syslog
+StandardError=syslog
+SyslogIdentifier=app-{{appName}}
+User={{userName}}
+Group={{userName}}
+Environment="APP_ENV=production"
+
+[Install]
+WantedBy=multi-user.target
