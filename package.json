@@ -22,7 +22,6 @@
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
     "test-unit": "coffee test/index.coffee | tap-spec",
     "createProductionApp": "coffee scripts/createProductionApp.coffee",
-    "inlineAssets": "html-inline -i ./client/dist/index.html -o server/public/index.html",
     "upload": "rsync -avh --stats --delete server/ $npm_package_config_prodServerSsh:/apps/telefonbuch/server/",
     "restartService": "ssh $npm_package_config_prodServerSsh 'sudo systemctl stop app-telefonbuch; sudo systemctl start app-telefonbuch'",
     "stagingUpload": "rsync -avh --stats --delete server/public/ /usr/local/var/www/"
@@ -31,7 +30,6 @@
     "coffeescript": "^2.0.0",
     "fs-extra": "latest",
     "glob": "latest",
-    "html-inline": "latest",
     "npm-run-all": "latest",
     "supervisor": "latest",
     "tap": "latest",

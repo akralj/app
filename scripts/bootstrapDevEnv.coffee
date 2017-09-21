@@ -1,5 +1,5 @@
 # sync config values of ./package.json with ./server/package.json, because some of them are used in production
-# copies webix fonts to client/dist
+#
 #
 
 

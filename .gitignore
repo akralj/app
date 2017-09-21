@@ -6,4 +6,3 @@ node_modules
 npm-debug.log
 db
 server/public
-server/services/data/lib/getData
