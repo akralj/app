@@ -36,7 +36,7 @@ module.exports = ->
       max: 100000
 
 
-  app.use collectionName, service(opts).extend({
+  app.use "api/#{collectionName}", service(opts).extend({
 
     before:
       all: [hooks.changeId2_id]
