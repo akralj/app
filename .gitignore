@@ -1,6 +1,5 @@
 .DS_Store
 .tern-port
-debug
 client
 node_modules
 npm-debug.log
