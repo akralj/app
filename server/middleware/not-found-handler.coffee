@@ -1,5 +1,5 @@
-errors = require('feathers-errors')
+errors = require("@feathersjs/errors")
 
 module.exports = ->
   (req, res, next) ->
-    next new (errors.NotFound)('Page not found')
+    next new (errors.NotFound)("Page not found")

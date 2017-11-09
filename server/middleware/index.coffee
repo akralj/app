@@ -2,9 +2,9 @@
 #
 #
 
-handler = require('feathers-errors/handler')
-notFound = require('./not-found-handler')
-logger = require('./logger')
+handler = require("@feathersjs/errors/handler")
+notFound = require("./not-found-handler")
+logger = require("./logger")
 
 
 module.exports = ->
