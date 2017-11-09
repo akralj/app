@@ -32,11 +32,13 @@ module.exports = ->
   opts =
     Model: db
     paginate:
-      default: 100000
+      default: 100
       max: 100000
 
 
-  app.use "api/#{collectionName}", service(opts).extend({
+  app.use("api/#{collectionName}", service(opts))
+
+  app.service("api/#{collectionName}").hooks({
 
     before:
       all: [hooks.changeId2_id]
