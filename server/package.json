@@ -9,17 +9,16 @@
     "@feathersjs/express": "^1.1.1",
     "@feathersjs/feathers": "^3.0.0",
     "@feathersjs/socketio": "^3.0.0",
-    "axios": "latest",
-    "coffeescript": "^2.0.0",
-    "compression": "latest",
-    "cors": "latest",
+    "coffeescript": "^2.0.2",
+    "compression": "^1.7.1",
+    "cors": "^2.8.4",
     "feathers-hooks-common": "^3.10.0",
-    "feathers-mongodb": "latest",
-    "feathers-nedb": "latest",
-    "joi": "latest",
+    "feathers-mongodb": "^2.9.1",
+    "feathers-nedb": "^2.7.0",
+    "joi": "^13.0.2",
     "lodash-mixins": "github:akralj/lodash-mixins",
-    "mongodb": "latest",
-    "nedb": "latest",
-    "winston": "latest"
+    "mongodb": "^2.2.33",
+    "nedb": "^1.8.0",
+    "winston": "^2.4.0"
   }
 }

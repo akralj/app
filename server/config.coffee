@@ -6,7 +6,7 @@ _           = require("lodash-mixins")
 npmPackage  = require("./package.json")
 appName     = npmPackage.name
 appRoot     = "/apps/#{appName}"
-appPort     = 7778 # change this to production port
+appPort     = 7777 # change this to production port
 
 
 config =
@@ -38,7 +38,7 @@ config =
 module.exports = (env) ->
   if env is "development"
     development =
-      appPort: 7778 # !!! important to make client proxy work
+      appPort: appPort + 1 # !!! important to make client proxy work
       clientCode: "./server/public"
       dbRoot: "./db"
       db: "nedb"
@@ -46,7 +46,7 @@ module.exports = (env) ->
 
   else if env is "testing"
     testing=
-      appPort: 7779
+      appPort: appPort + 2
       dbRoot: "./test/db"
       db: "nedb"
     _.merge(config, testing)
