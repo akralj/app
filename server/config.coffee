@@ -6,7 +6,9 @@ _           = require("lodash-mixins")
 npmPackage  = require("./package.json")
 appName     = npmPackage.name
 appRoot     = "/apps/#{appName}"
-appPort     = 7777 # change this to production port
+
+# adds options to run dev env on different port. (two people can dev on same server)
+appPort = if process.env?.APP_PORT then +process.env.APP_PORT else appPort = 7777 # this is production port
 
 
 config =
