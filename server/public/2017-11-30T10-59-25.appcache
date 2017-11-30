@@ -1,0 +1,16 @@
+CACHE MANIFEST
+# 2017-11-30T10-59-25
+
+CACHE:
+/app.html
+/dist/build.js
+/dist/build.js.map
+/dist/style.css
+/dist/style.css.map
+/static/favicon-32x32.png
+/static/v.png
+NETWORK:
+*
+
+FALLBACK:
+/ /app.html
