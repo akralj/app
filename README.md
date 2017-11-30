@@ -67,7 +67,7 @@ create production app
 ``` sh
 npm run deploy
 ```
-- build and copy client app to server/public
+- build and copy client app to server/public (removes everything first, only keeps server/public/assets)
 - rsync ./server to production server (prodServerName) (including node_modules, etc)
 - stop and start app-{{appName}} (systemd) on production server
 
