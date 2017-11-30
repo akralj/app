@@ -4,7 +4,7 @@
 
 path            = require("path")
 fs              = require('fs-extra')
-glob            = require("glob")
+globby          = require("globby")
 del             = require("del")
 
 now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
@@ -22,9 +22,9 @@ fs.copySync("client/index.html", "server/public/index.html")
 fs.copySync("client/dist/", "server/public/dist/")
 fs.copySync("client/static/", "server/public/static/")
 
-
-glob "#{destDir}/**/*.*", {}, (err, files) ->
-  if files
+createApp = ->
+  try
+    files = await globby("#{destDir}/**/*.*")
     appCacheFiles = files
       .filter (file) -> not file.match(/index.html/)
       .map (file) -> file.replace(destDir, "")
@@ -62,5 +62,7 @@ glob "#{destDir}/**/*.*", {}, (err, files) ->
 
     fs.writeFileSync "#{destDir}/app.html", indexHtml
 
-  else
+  catch err
     console.log "Can't create production app", err
+
+createApp()
