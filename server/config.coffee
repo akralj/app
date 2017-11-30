@@ -3,8 +3,7 @@
 #
 
 _           = require("lodash-mixins")
-npmPackage  = require("./package.json")
-appName     = npmPackage.name
+appName     = require("./package.json").name
 appRoot     = "/apps/#{appName}"
 
 # adds options to run dev env on different port. (two people can dev on same server)
@@ -18,7 +17,7 @@ config =
   clientCode: "#{appRoot}/server/public"
 
   # configure database server here. default is nedb in dev & test and mongodb in production
-  db: "mongodb" # ["nedb", "mongodb"]
+  db: "nedb" # ["nedb", "mongodb"]
   dbPath: "mongodb://localhost:27017"
   dbRoot: "#{appRoot}/db" # for nedb
 

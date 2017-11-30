@@ -15,7 +15,6 @@
 4. enable & start
 ```
 sudo systemctl enable app-{{appName}}
-sudo systemctl start app-{{appName}}
 ```
 
 5. add prodcution user systemd script rights to: /etc/sudoers.d/usersWithNoPassword
@@ -30,3 +29,6 @@ e.g. {{userName}} ALL=(ALL) NOPASSWD: /bin/journalctl -u app-{{appName}} -f, /bi
 ```
 sudo journalctl -u app-{{appName}} -f
 ```
+
+8. deploy app from dev machine for the first time
+``` DEPLOY_SSH=userName@server npm run deploy ```

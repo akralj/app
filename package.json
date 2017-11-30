@@ -1,11 +1,8 @@
 {
-  "name": "app-name",
+  "name": "appName",
   "version": "0.0.1",
   "author": "akralj <dev@kralj.de>",
   "description": "your desc",
-  "config": {
-    "prodServerSsh": "user@server"
-  },
   "private": true,
   "scripts": {
     "start": "npm run dev",
@@ -22,8 +19,8 @@
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
     "test-unit": "coffee test/index.coffee | tap-spec",
     "createProductionApp": "coffee scripts/createProductionApp.coffee",
-    "upload": "rsync -avh --stats --delete server/ $npm_package_config_prodServerSsh:/REMOTE/SERVER/DIR/",
-    "restartService": "ssh $npm_package_config_prodServerSsh 'sudo systemctl stop app-telefonbuch; sudo systemctl start app-telefonbuch'",
+    "upload": "rsync -avh --stats --delete --exclude 'public/assets' server/ $DEPLOY_SSH:/apps/appName/server",
+    "restartService": "ssh $DEPLOY_SSH 'sudo systemctl stop app-appName; sudo systemctl start app-appName'",
     "stagingUpload": "rsync -avh --stats --delete server/public/ /usr/local/var/www/"
   },
   "devDependencies": {

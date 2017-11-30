@@ -24,11 +24,11 @@ git push origin
 
 
 # Note:
-There are 3 package.json files in this project, in ./  one, ./client/ and ./server/
-./package.json is used to build tools and npm scripts
-./client/package.json is used for the client dependencies
-./server/package.json is used for the server dependencies. Most other props are copied from ./package.json
-- client dependencies are installed as devDependencies in ../client
+There are 3 package.json files in this project, in "./" , "./client/" and "./server/"
+"./package.json" is used to build tools and npm scripts
+"./client/package.json" is used for the client dependencies
+"./server/package.json" is used for the server dependencies. Most other props are copied from ./package.json
+- client dependencies are installed as in ../client
 - server dependencies are installled as dependencies in ./server
 
 
@@ -62,10 +62,10 @@ do manual tests from trello
 
 ### Step 2
 
-create production app
+create production app with the user the service runs and you habe ssh access.
 
 ``` sh
-npm run deploy
+DEPLOY_SSH=user@server npm run deploy
 ```
 - build and copy client app to server/public (removes everything first, only keeps server/public/assets)
 - rsync ./server to production server (prodServerName) (including node_modules, etc)
