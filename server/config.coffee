@@ -1,6 +1,6 @@
 #
 #
-#
+# TODO: check if appRoot can be replaced with path.join(__dirname, "../db") in prod
 
 _           = require("lodash-mixins")
 appName     = require("./package.json").name
@@ -27,8 +27,6 @@ config =
     server:
       host: 'smtp.yourServerName.at'
       port: 25
-    templatesPath: "#{appRoot}/share/templatesDir"
-
   services:
     contacts:
       imageFolder: "/apps/assets/images/contact"
