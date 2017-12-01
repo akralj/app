@@ -9,7 +9,7 @@ docs like in: http://vuejs-templates.github.io/webpack/
 - change name, description & author in package.json -> this will be used in server/config.coffee
 - change appPort to production port,... in server/config.coffee to match your enviroment
 - start with a fresh git repo
-``` sh
+```
 rm -rf .git
 git init
 git add .
@@ -37,13 +37,13 @@ There are 3 package.json files in this project, in "./" , "./client/" and "./ser
 # Development Workflow
 
 run dev server
-``` sh
+```
 npm run dev
 ```
 
 build and run "production" code on staging server on devServer:7778
 useful for testing offline version, devServer:7778/app.html
-``` sh
+```
 npm run stage
 ```
 
@@ -55,7 +55,7 @@ gca "release-x.x.x - your comment"
 ### Step 1
 
 run development instance
-``` sh
+```
 npm run dev &
 npm run stage
 ```
@@ -64,9 +64,9 @@ do manual tests from trello
 
 ### Step 2
 
-create production app with the user the service runs and you habe ssh access.
+create production app with the user context the service runs and you have ssh access.
 
-``` sh
+```
 DEPLOY_SSH=user@server npm run deploy
 ```
 - build and copy client app to server/public (removes everything first, only keeps server/public/assets)
@@ -76,19 +76,17 @@ DEPLOY_SSH=user@server npm run deploy
 ### Step 3
 
 check if service running
-``` sh
+```
 ssh username@prodServerName
 sudo journalctl -u app-name -f
 ```
 
-
 ### Step 4
 
 Commit to master
-``` sh
+```
 git co master
 git merge dev
 git push origin master
 git co dev
-
 ```
