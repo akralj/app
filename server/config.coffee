@@ -14,7 +14,6 @@ config =
   appName: appName
   appRoot: appRoot
   appPort: appPort
-  clientCode: "#{appRoot}/server/public"
 
   # configure database server here. default is nedb in dev & test and mongodb in production
   db: "nedb" # ["nedb", "mongodb"]
@@ -40,7 +39,6 @@ module.exports = (env) ->
   if env is "development"
     development =
       appPort: appPort + 1 # !!! important to make client proxy work
-      clientCode: "./server/public"
       dbRoot: "./db"
       db: "nedb"
     _.merge(config, development)

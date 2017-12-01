@@ -8,19 +8,18 @@ globby          = require("globby")
 del             = require("del")
 
 now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
-destDir = path.join(__dirname, "/../server/public")
+destDir = path.join(__dirname, "/../server/public/app")
 
 # sync ./package.json and ./server/package.json
 require("./bootstrapDevEnv")
 
-# 1. cleanup public production dir. !!! keeps only assets folder alive !!!
-del.sync(["#{destDir}/**", "!#{destDir}", "!#{destDir}/assets"])
-
+# 1. cleanup app folder
+fs.emptyDirSync(destDir)
 
 # 2. copy client files to public
-fs.copySync("client/index.html", "server/public/index.html")
-fs.copySync("client/dist/", "server/public/dist/")
-fs.copySync("client/static/", "server/public/static/")
+fs.copySync("client/index.html", "server/public/app/index.html")
+fs.copySync("client/dist/", "server/public/app/dist/")
+fs.copySync("client/static/", "server/public/app/static/")
 
 createApp = ->
   try

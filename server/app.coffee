@@ -7,6 +7,7 @@ express       = require("@feathersjs/express");
 socketio      = require("@feathersjs/socketio")
 compression   = require("compression")
 cors          = require("cors")
+path          = require("path")
 middleware    = require("./middleware")
 
 promisedApp = new Promise (resolve) ->
@@ -18,7 +19,8 @@ promisedApp = new Promise (resolve) ->
 
   app.use(compression())
   .options("*", cors()).use(cors()) # needed for tests
-  .use("/", express.static(app.serverConfig.clientCode))
+  .use("/assets", express.static(path.join(__dirname, "./public/assets")))
+  .use("/", express.static(path.join(__dirname, "./public/app")))
   .use(express.json())
   .use(express.urlencoded(extended: true))
   .configure(socketio())
