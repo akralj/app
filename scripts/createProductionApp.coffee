@@ -1,6 +1,6 @@
-# TODO build client files here
-# adds style.css
 # Collects all files in destDir, apart from index.html & writes appcache
+# adds style.css
+#
 
 path            = require("path")
 fs              = require('fs-extra')

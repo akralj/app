@@ -12,16 +12,14 @@
     "predev": "coffee scripts/bootstrapDevEnv.coffee",
     "dev": "npm-run-all --parallel client server",
     "test": "watch 'npm run test-unit' test server --wait 0",
+    "test-unit": "coffee test/index.coffee | tap-spec",
     "buildClient": "cd ./client && npm run build",
     "stage": "npm-run-all buildClient createProductionApp",
-    "deploy": "npm-run-all buildClient createProductionApp upload restartService",
+    "deploy": "npm-run-all buildClient createProductionApp uploadAndRestartApp",
     "client": "cd ./client && npm run dev",
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
-    "test-unit": "coffee test/index.coffee | tap-spec",
     "createProductionApp": "coffee scripts/createProductionApp.coffee",
-    "upload": "rsync -avh --stats --delete --exclude 'public/assets' server/ $DEPLOY_SSH:/apps/appName/server",
-    "restartService": "ssh $DEPLOY_SSH 'sudo systemctl stop app-appName; sudo systemctl start app-appName'",
-    "stagingUpload": "rsync -avh --stats --delete server/public/ /usr/local/var/www/"
+    "uploadAndRestartApp": "bash scripts/uploadAndRestartApp.sh"
   },
   "devDependencies": {
     "axios": "^0.17.1",
