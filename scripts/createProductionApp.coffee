@@ -5,7 +5,6 @@
 path            = require("path")
 fs              = require('fs-extra')
 globby          = require("globby")
-del             = require("del")
 
 now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
 destDir = path.join(__dirname, "/../server/public/app")
