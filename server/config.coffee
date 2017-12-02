@@ -1,24 +1,22 @@
 #
 #
-# TODO: check if appRoot can be replaced with path.join(__dirname, "../db") in prod
+#
 
+path        = require("path")
 _           = require("lodash-mixins")
 appName     = require("./package.json").name
-appRoot     = "/apps/#{appName}"
-
 # adds options to run dev env on different port. (two people can dev on same server)
 appPort = if process.env?.APP_PORT then +process.env.APP_PORT else appPort = 7777 # this is production port
 
 
 config =
   appName: appName
-  appRoot: appRoot
   appPort: appPort
 
   # configure database server here. default is nedb in dev & test and mongodb in production
   db: "nedb" # ["nedb", "mongodb"]
   dbPath: "mongodb://localhost:27017"
-  dbRoot: "#{appRoot}/db" # for nedb
+  dbRoot: path.join(__dirname, "../db") # for nedb
 
   authConfig:
     readOnlyGroups: ["someGroup_r", "anotherGroup_r"]
