@@ -2,8 +2,8 @@
 # modeled after: https://github.com/feathersjs/feathers-chat
 #
 
-feathers      = require("@feathersjs/feathers");
-express       = require("@feathersjs/express");
+feathers      = require("@feathersjs/feathers")
+express       = require("@feathersjs/express")
 socketio      = require("@feathersjs/socketio")
 compression   = require("compression")
 cors          = require("cors")
