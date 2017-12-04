@@ -1,7 +1,10 @@
 #!/bin/env bash
+# DEPLOY_SSH=xnet@diolapp02 npm run deploy
 
 # 1. get name prop from package.json
 APP_NAME="$(node -pe "require('./package.json')['name']")"
+DEPLOY_SSH="xnet@diolapp02" 
+
 
 if [ -n "$DEPLOY_SSH" ]
 then

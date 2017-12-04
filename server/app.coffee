@@ -8,8 +8,8 @@ socketio      = require("@feathersjs/socketio")
 compression   = require("compression")
 cors          = require("cors")
 path          = require("path")
-middleware    = require("./middleware")
 fs            = require("fs")
+middleware    = require("./middleware")
 
 
 promisedApp = new Promise (resolve) ->
@@ -27,6 +27,7 @@ promisedApp = new Promise (resolve) ->
   app.use("/assets", express.static(assetsDir))
   # static app assets
   app.use("/", express.static(path.join(__dirname, "./public")))
+
   app.use(express.json())
   app.use(express.urlencoded(extended: true))
   app.configure(socketio())

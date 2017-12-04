@@ -1,7 +1,10 @@
+client
+
+assets
+db
+node_modules
+server/public
+
 .DS_Store
 .tern-port
-client
-node_modules
 npm-debug.log
-db
-server/public
