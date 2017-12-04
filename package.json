@@ -4,7 +4,6 @@
   "author": "akralj <dev@kralj.de>",
   "description": "your desc",
   "private": true,
-  "DEPLOY_SSH": "user@server",
   "scripts": {
     "start": "npm run dev",
     "postinstall": "npm-run-all --parallel installClient installServer",

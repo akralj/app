@@ -7,18 +7,18 @@ fs              = require('fs-extra')
 globby          = require("globby")
 
 now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
-destDir = path.join(__dirname, "/../server/public/app")
+destDir = path.join(__dirname, "/../server/public")
 
 # sync ./package.json and ./server/package.json
 require("./bootstrapDevEnv")
 
-# 1. cleanup app folder
+# 1. cleanup public (=destDir) folder
 fs.emptyDirSync(destDir)
 
 # 2. copy client files to public
-fs.copySync("client/index.html", "server/public/app/index.html")
-fs.copySync("client/dist/", "server/public/app/dist/")
-fs.copySync("client/static/", "server/public/app/static/")
+fs.copySync("client/index.html", "#{destDir}/index.html")
+fs.copySync("client/dist/", "#{destDir}/dist/")
+fs.copySync("client/static/", "#{destDir}/static/")
 
 createApp = ->
   try
