@@ -12,7 +12,6 @@ middleware    = require("./middleware")
 fs            = require("fs")
 
 
-
 promisedApp = new Promise (resolve) ->
   # Create a feathers instance.
   app = express(feathers())

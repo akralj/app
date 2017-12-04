@@ -2,8 +2,18 @@
 
 > app dev made easy
 
-docs like in: http://vuejs-templates.github.io/webpack/
 
+## Install prerequisites on dev machine and production server
+- tested in ubuntu 16.04 and node 8.x
+
+### Install node.js(8.x) and git
+``` sh
+# install dependencies on ubuntu
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get update
+# install node and git
+sudo apt-get install --yes git nodejs
+```
 
 ## First steps
 - change name, description & author in package.json -> this will be used in server/config.coffee
@@ -69,7 +79,7 @@ create production app with the user context the service runs and you have ssh ac
 ```
 DEPLOY_SSH=user@server npm run deploy
 ```
-- build and copy client app to server/public (removes everything first, only keeps server/public/assets)
+- builds client and copy client app to server/public
 - rsync ./server to production server (prodServerName) (including node_modules, etc)
 - stop and start app-{{appName}} (systemd) on production server
 
@@ -90,3 +100,5 @@ git merge dev
 git push origin master
 git co dev
 ```
+
+TODOS: add more docs like in: http://vuejs-templates.github.io/webpack/
