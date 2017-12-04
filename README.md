@@ -16,11 +16,22 @@ sudo apt-get install --yes git nodejs
 ```
 
 ## First steps
+#### Clone repos and install deps
+```
+git clone https://github.com/akralj/app {{yourAppName}}
+cd {{yourAppName}}
+git clone https://github.com/akralj/app-client client
+# install dependencies
+npm install
+```
+
+#### Configure app
 - change name, description & author in package.json -> this will be used in server/config.coffee
 - change appPort to production port,... in server/config.coffee to match your enviroment
-- start with a fresh git repo
+
+#### Start with a fresh git repo
 ```
-rm -rf .git
+rm -rf .git client/.git
 git init
 git add .
 git commit -am "initial commit"
@@ -69,7 +80,7 @@ run development instance
 npm run dev &
 npm run stage
 ```
-go to http://devServer:7778, /app.html
+go to http://devServer:7778 and /app.html if it's an offline app
 do manual tests from trello
 
 ### Step 2
