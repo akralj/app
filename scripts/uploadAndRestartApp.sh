@@ -3,7 +3,8 @@
 
 # 1. get name prop from package.json
 APP_NAME="$(node -pe "require('./package.json')['name']")"
-DEPLOY_SSH="xnet@diolapp02" 
+# you also can set it here
+#DEPLOY_SSH="user@serverName" 
 
 
 if [ -n "$DEPLOY_SSH" ]
