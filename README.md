@@ -1,4 +1,4 @@
-# Feathers Starter Kit & BYO (bring your own client)
+# Feathers Starter Kit & Vuetify Client
 
 > app dev made easy
 
@@ -20,8 +20,8 @@ sudo apt-get install --yes git nodejs
 ```
 git clone https://github.com/akralj/app {{yourAppName}}
 cd {{yourAppName}}
-git clone https://github.com/akralj/app-client client
-# install dependencies
+
+### install dependencies
 npm install
 ```
 
@@ -31,7 +31,7 @@ npm install
 
 #### Start with a fresh git repo
 ```
-rm -rf .git client/.git
+rm -rf .git
 git init
 git add .
 git commit -am "initial commit"
@@ -51,6 +51,7 @@ There are 3 package.json files in this project, in "./" , "./client/" and "./ser
 2. "./client/package.json" is used for the client dependencies
 3. "./server/package.json" is used for the server dependencies. Most other props are copied from ./package.json
 
+### IMPORTANT
 - client dependencies are installed as in ../client
 - server dependencies are installled as dependencies in ./server
 
