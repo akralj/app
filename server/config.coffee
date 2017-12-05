@@ -35,7 +35,6 @@ module.exports = (env) ->
   if env is "development"
     development =
       appPort: appPort + 1 # !!! important to make client proxy work
-      dbRoot: "./db"
       db: "nedb"
     _.merge(config, development)
 
