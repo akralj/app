@@ -33,6 +33,7 @@ promisedApp = new Promise (resolve) ->
   app.configure(express.rest())
   app.configure(require("./services/config"))
   app.configure(require("./services/data"))
+  app.configure(require("./services/method"))
   app.configure(middleware)
 
   resolve app
