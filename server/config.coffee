@@ -1,4 +1,6 @@
-# main config file
+# Main config file
+# Add everything here, what server code depends on
+#
 
 
 # CHANGE 7777 TO PRODUCTION PORT HERE
