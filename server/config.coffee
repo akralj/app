@@ -1,13 +1,13 @@
-#
-#
-#
+# main config file
+
+
+# CHANGE 7777 TO PRODUCTION PORT HERE
+appPort = +process.env?.APP_PORT or 7777 # adds options to run dev env on different port.
+
 
 path        = require("path")
 _           = require("lodash-mixins")
 appName     = require("./package.json").name
-# adds options to run dev env on different port. (two people can dev on same server)
-appPort = if process.env?.APP_PORT then +process.env.APP_PORT else appPort = 7777 # this is production port
-
 
 config =
   appName: appName

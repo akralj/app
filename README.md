@@ -26,7 +26,7 @@ npm install
 ```
 
 #### Configure app
-- change name, description & author in package.json -> this will be used in server/config.coffee
+- change name, description & author in package.json. name will be used in server/config.coffee
 - change appPort to production port,... in server/config.coffee to match your enviroment
 
 #### Start with a fresh git repo
