@@ -4,14 +4,14 @@
 
 
 ## Install prerequisites on dev machine and production server
-- tested in ubuntu 16.04 and node 8.x
+- tested with ubuntu 16.04 and node 8.x
 
 ### Install node.js(8.x) and git
 ``` sh
-# install dependencies on ubuntu
+# Install dependencies on ubuntu
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get update
-# install node and git
+# Install node and git
 sudo apt-get install --yes git nodejs
 ```
 
@@ -21,7 +21,7 @@ sudo apt-get install --yes git nodejs
 git clone https://github.com/akralj/app {{yourAppName}}
 cd {{yourAppName}}
 
-### install dependencies
+### Install dependencies
 npm install
 ```
 
@@ -35,7 +35,7 @@ rm -rf .git
 git init
 git add .
 git commit -am "initial commit"
-# add your own remote origin
+# Add your own remote origin
 git remote set-url origin ssh://git@YourSourcecodeServer/projectName/appName.git
 git push origin
 ```
