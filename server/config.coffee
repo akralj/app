@@ -15,7 +15,7 @@ config =
 
   # configure database server here. default is nedb
   db: "nedb" # ["nedb", "mongodb"]
-  dbPath: "mongodb://localhost:27017/databaseName"
+  dbPath: "mongodb://localhost:27017/databaseName" # CHANGE TO YOUR MONGO DB NAME
   dbRoot: path.join(__dirname, "../db") # for nedb
 
   authConfig:
