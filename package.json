@@ -9,7 +9,6 @@
     "postinstall": "npm-run-all --parallel installClient installServer",
     "installClient": "cd ./client && npm install",
     "installServer": "cd server && npm install --only=production",
-    "predev": "coffee scripts/bootstrapDevEnv.coffee",
     "dev": "npm-run-all --parallel client server",
     "test": "watch 'npm run test-unit' test server --wait 0",
     "test-unit": "coffee test/index.coffee | tap-spec",

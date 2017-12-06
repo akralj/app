@@ -6,18 +6,16 @@
 # CHANGE 7777 TO PRODUCTION PORT HERE
 appPort = +process.env?.APP_PORT or 7777 # adds options to run dev env on different port.
 
-
 path        = require("path")
 _           = require("lodash-mixins")
-appName     = require("./package.json").name
+
 
 config =
-  appName: appName
   appPort: appPort
 
-  # configure database server here. default is nedb in dev & test and mongodb in production
+  # configure database server here. default is nedb
   db: "nedb" # ["nedb", "mongodb"]
-  dbPath: "mongodb://localhost:27017"
+  dbPath: "mongodb://localhost:27017/databaseName"
   dbRoot: path.join(__dirname, "../db") # for nedb
 
   authConfig:

@@ -17,12 +17,12 @@ module.exports = ->
   if app.serverConfig.db is "mongodb"
     MongoClient = require('mongodb').MongoClient
     service     = require('feathers-mongodb')
-    mongodb     = await MongoClient.connect("#{app.serverConfig.dbPath}/#{app.serverConfig.appName}")
+    mongodb     = await MongoClient.connect(app.serverConfig.dbPath)
     db          = mongodb.collection(collectionName)
   else
     NeDb          = require('nedb')
     service       = require('feathers-nedb')
-    db = new NeDb({filename: "#{app.serverConfig.dbRoot}/#{collectionName}.db", autoload: true})
+    db = new NeDb({ filename: "#{app.serverConfig.dbRoot}/#{collectionName}.db", autoload: true })
 
   db.remove {}, { multi: true }, (err, res) ->
     data = require("./films.json")

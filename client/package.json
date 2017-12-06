@@ -1,8 +1,8 @@
 {
-  "name": "client-ame",
-  "description": "your desc",
-  "version": "0.0.1",
-  "author": "akralj <dev@kralj.de>",
+  "name": "client-name",
+  "description": "",
+  "version": "",
+  "author": "",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",

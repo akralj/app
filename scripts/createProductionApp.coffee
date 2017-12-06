@@ -10,7 +10,13 @@ now     = new Date().toISOString().slice(0, 19).replace(/:/g, "-")
 destDir = path.join(__dirname, "/../server/public")
 
 # sync ./package.json and ./server/package.json
-require("./bootstrapDevEnv")
+propsToOverwrite  = ["name", "version", "author", "description"]
+json              = require("../package.json")
+jsonServer        = require("../server/package.json")
+for prop in propsToOverwrite
+  jsonServer[prop] = json[prop] if json?[prop]
+
+fs.writeFileSync("./server/package.json", JSON.stringify(jsonServer, null, 2) )
 
 # 1. cleanup public (=destDir) folder
 fs.emptyDirSync(destDir)

@@ -15,18 +15,17 @@ module.exports = ->
   if app.serverConfig.db is "mongodb"
     MongoClient = require('mongodb').MongoClient
     service     = require('feathers-mongodb')
-    mongodb     = await MongoClient.connect("#{app.serverConfig.dbPath}/#{app.serverConfig.appName}")
+    mongodb     = await MongoClient.connect(app.serverConfig.dbPath)
     db          = mongodb.collection(collectionName)
   else
     NeDb          = require('nedb')
     service       = require('feathers-nedb')
-    db = new NeDb({filename: "#{app.serverConfig.dbRoot}/#{collectionName}.db", autoload: true})
+    db = new NeDb({ filename: "#{app.serverConfig.dbRoot}/#{collectionName}.db", autoload: true })
 
   # put clientConfigDefault values in and remove in production if you want
   # to allow users to change settings from client
   db.remove {}, { multi: true }, (err, res) ->
-    clientConfig = require("./clientConfigDefault")(app.env).map (item) ->
-      {_id: item.id, data: item.data}
+    clientConfig = require("./clientConfigDefault")(app.env).map (item) -> { _id: item.id, data: item.data }
     db.insert clientConfig, (err, res) -> #console.log err, res
 
   opts =

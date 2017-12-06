@@ -10,9 +10,8 @@
 ``` sh
 # Install dependencies on ubuntu
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
-sudo apt-get update
 # Install node and git
-sudo apt-get install --yes git nodejs
+sudo apt-get install git nodejs
 ```
 
 ## First steps
@@ -26,8 +25,8 @@ npm install
 ```
 
 #### Configure app
-- change name, description & author in package.json. name will be used in server/config.coffee
-- change appPort to production port,... in server/config.coffee to match your enviroment
+- change name, description & author in ./package.json. Name will be used in ./server/config.coffee
+- change appPort to production port,... in ./server/config.coffee to match your enviroment
 
 #### Start with a fresh git repo
 ```
