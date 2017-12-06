@@ -2,7 +2,7 @@
 #
 #
 
-_ = require("lodash-mixins")
+_ = require("lodash")
 tap = require('tap')
 
 

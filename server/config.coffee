@@ -7,7 +7,7 @@
 appPort = +process.env?.APP_PORT or 7777 # adds options to run dev env on different port.
 
 path        = require("path")
-_           = require("lodash-mixins")
+_           = require("lodash")
 
 
 config =

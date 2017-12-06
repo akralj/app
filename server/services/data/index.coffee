@@ -2,7 +2,7 @@
 # eg. web team
 #
 
-_             = require("lodash-mixins")
+_             = require("lodash")
 NeDb          = require('nedb')
 service       = require('feathers-nedb')
 feathersHooks = require("feathers-hooks-common")

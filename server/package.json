@@ -17,7 +17,7 @@
     "feathers-nedb": "^3.0.0",
     "globby": "^7.1.1",
     "joi": "^13.0.2",
-    "lodash-mixins": "github:akralj/lodash-mixins",
+    "lodash": "^4.17.4",
     "mongodb": "^2.2.33",
     "nedb": "^1.8.0",
     "winston": "^2.4.0"

@@ -2,7 +2,7 @@
 # see http://docs.feathersjs.com/hooks/readme.html for more details on hooks.
 #
 
-_ = require("lodash-mixins")
+_ = require("lodash")
 
 
 normalizeId = (obj) ->
