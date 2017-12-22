@@ -57,11 +57,17 @@ createApp = ->
     # 4. write appcache enabled app.html
     indexHtml = fs.readFileSync "#{destDir}/index.html", "utf8"
 
-    # 5. add style.css
+    # 5a. add style.css
     indexHtml = indexHtml.replace('</head>', '  <link rel="stylesheet" href="./dist/style.css">\n  </head>')
+    # 5b. add meta data
+    try
+      appVersion = require("../package.json")?.version
+      indexHtml = indexHtml.replace('<meta name="app-version" content="dev">', """<meta name="app-version" content="#{appVersion}">""")
+      indexHtml = indexHtml.replace('<meta name="app-build-date" content="dev">', """<meta name="app-build-date" content="#{new Date().toISOString()}">""")
+
     fs.writeFileSync "#{destDir}/index.html", indexHtml
 
-    # 5. build offline app with appcache enabled
+    # 6. build offline app with appcache enabled
     indexHtml = indexHtml.replace('<html lang="de">', """<html lang="de" manifest="/#{now}.appcache">""")
 
     fs.writeFileSync "#{destDir}/app.html", indexHtml
