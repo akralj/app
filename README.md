@@ -71,7 +71,6 @@ npm run stage
 # Production Workflow
 ### Step 0
 change ./package.json version: to new release, eg. from release-0.1.1 to release-0.1.2
-gca "release-x.x.x - your comment"
 
 ### Step 1
 
@@ -103,6 +102,9 @@ sudo journalctl -u app-name -f
 ```
 
 ### Step 4
+
+Commit to dev
+```gca "release-x.x.x - your comment" ```
 
 Commit to master
 ```
