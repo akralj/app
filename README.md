@@ -88,7 +88,7 @@ create production app with the user context the service runs and you have ssh ac
 DEPLOY_SSH=user@server npm run deploy
 ```
 - builds client and copy client app to server/public
-- rsync ./server to production server (prodServerName) (including node_modules, etc)
+- rsync ./server, ./node_modules and ./package.json to production server (prodServerName)
 - stop and start app-{{appName}} (systemd) on production server
 
 ### Step 3

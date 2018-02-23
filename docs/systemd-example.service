@@ -2,7 +2,7 @@
 Description=your desc
 Documentation=https://link-to-docs
 [Service]
-ExecStart=/apps/{{appName}}/server/node_modules/coffeescript/bin/coffee /apps/{{appName}}/server/index.coffee
+ExecStart=/apps/{{appName}}/node_modules/coffeescript/bin/coffee /apps/{{appName}}/server/index.coffee
 Restart=always
 StandardOutput=syslog
 StandardError=syslog
