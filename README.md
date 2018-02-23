@@ -44,15 +44,13 @@ git push origin
 
 
 # Note:
-There are 3 package.json files in this project, in "./" , "./client/" and "./server/"
+There are 2 package.json files in this project, in "./" and "./client/"
 
-1. "./package.json" is used to build tools and npm scripts
+1. "./package.json" is used for server dependencies (dependencies), build tools and npm scripts (devDependencies)
 2. "./client/package.json" is used for the client dependencies
-3. "./server/package.json" is used for the server dependencies. Most other props are copied from ./package.json
 
 ### IMPORTANT
 - client dependencies are installed as in ../client
-- server dependencies are installled as dependencies in ./server
 
 
 # Development Workflow
