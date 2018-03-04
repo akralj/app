@@ -35,10 +35,14 @@ promisedApp = new Promise (resolve) ->
 
   # auth before all services
   app.configure(require('./authentication'))
+
   app.configure(require("./services/users"))
   app.configure(require("./services/config"))
   app.configure(require("./services/data"))
   app.configure(require("./services/method"))
+
+  # Set up event channels (see channels.coffee)
+  app.configure(require('./channels'))
 
   app.configure(middleware)
 
