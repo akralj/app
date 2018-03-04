@@ -43,7 +43,7 @@ promisedApp = new Promise (resolve) ->
 
   # Set up event channels (see channels.coffee)
   app.configure(require('./channels'))
-
+  # logging and error handler middleware
   app.configure(middleware)
 
 
