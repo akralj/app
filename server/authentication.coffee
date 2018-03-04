@@ -8,7 +8,7 @@ local           = require('@feathersjs/authentication-local')
 
 
 module.exports = (app) ->
-  config = app.serverConfig.authentication
+  config = app.serverConfig.authConfig
 
   # Set up authentication with the secret
   app.configure authentication(config)

@@ -21,7 +21,7 @@ config =
   authConfig:
     readOnlyGroups: ["someGroup_r", "anotherGroup_r"]
     readWriteGroups: ["someOtherGroup_rw"]
-  authentication:
+    # feathers auth config
     secret: "CHANGE ME TO SOMETHING REALLY LONG"
     strategies: ["jwt", "local"]
     path: "/api/authentication"
