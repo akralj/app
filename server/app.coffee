@@ -32,10 +32,16 @@ promisedApp = new Promise (resolve) ->
   app.use(express.urlencoded(extended: true))
   app.configure(socketio())
   app.configure(express.rest())
+
+  # auth before all services
+  app.configure(require('./authentication'))
+  app.configure(require("./services/users"))
   app.configure(require("./services/config"))
   app.configure(require("./services/data"))
   app.configure(require("./services/method"))
+
   app.configure(middleware)
+
 
   resolve app
 

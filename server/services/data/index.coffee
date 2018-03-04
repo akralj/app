@@ -2,11 +2,12 @@
 # eg. web team
 #
 
-_             = require("lodash")
-NeDb          = require('nedb')
-service       = require('feathers-nedb')
-feathersHooks = require("feathers-hooks-common")
-hooks         = require('../../hooks')
+_                = require("lodash")
+NeDb             = require('nedb')
+service          = require('feathers-nedb')
+feathersHooks    = require("feathers-hooks-common")
+hooks            = require('../../hooks')
+{ authenticate } = require('@feathersjs/authentication').hooks
 
 
 module.exports = ->
@@ -41,7 +42,9 @@ module.exports = ->
 
   app.service("api/#{collectionName}").hooks({
     before:
-      all: [hooks.changeId2_id, hooks.normalizeParams]
+      # allow only authenticated users
+      #all: [ authenticate('jwt'), hooks.changeId2_id, hooks.normalizeParams ]
+      all: [ hooks.changeId2_id, hooks.normalizeParams]
       patch:  feathersHooks.disallow('external')
       remove: feathersHooks.disallow('external')
       # WAF block all POSTS, PUTS so this is save and needed to be updated from admin server
