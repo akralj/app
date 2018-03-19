@@ -45,4 +45,16 @@ exports.default =
 <style src='vuetify/dist/vuetify.min.css'></style>
 <style lang="stylus">
   //@import './stylus/main'
+  
+  // print styles. use .no-print class on elements you dont want to show
+  @media print
+    @page
+      margin: 1em
+    body
+      overflow: auto
+      height: auto
+    .application--wrap .navigation-drawer, nav.toolbar, .no-print
+      display:none
+    main.content
+      padding: 0 !important
 </style>

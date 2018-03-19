@@ -32,10 +32,16 @@ promisedApp = new Promise (resolve) ->
   app.use(express.urlencoded(extended: true))
   app.configure(socketio())
   app.configure(express.rest())
+  
+  # add all endpoints
   app.configure(require("./services/config"))
   app.configure(require("./services/logs"))
   app.configure(require("./services/data"))
   app.configure(require("./services/method"))
+
+  # add jobs to app
+  app.configure(require('./jobs/'))
+
   app.configure(middleware)
 
   resolve app
