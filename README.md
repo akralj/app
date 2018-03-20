@@ -50,7 +50,7 @@ There are 2 package.json files in this project, in "./" and "./client/"
 2. "./client/package.json" is used for the client dependencies
 
 ### IMPORTANT
-- client dependencies are installed as in ../client
+- Please install client dependencies in ../client
 
 
 # Development Workflow
