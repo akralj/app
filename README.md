@@ -87,6 +87,8 @@ create production app with the user context the service runs and you have ssh ac
 ```
 DEPLOY_SSH=user@server npm run deploy
 ```
+or configure DEPLOY_SSH in ./jobs/uploadAndRestartApp.sh
+
 - builds client and copy client app to server/public
 - rsync ./server, ./node_modules and ./package.json to production server (prodServerName)
 - stop and start app-{{appName}} (systemd) on production server
@@ -96,7 +98,7 @@ DEPLOY_SSH=user@server npm run deploy
 check if service running
 ```
 ssh username@prodServerName
-sudo journalctl -u app-name -f
+sudo journalctl -u app-{{appName} -f
 ```
 
 ### Step 4
