@@ -1,6 +1,8 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
+//var MinifyPlugin = require("babel-minify-webpack-plugin")
+
 
 // get serverPort from main server/config.coffee
 try {
@@ -114,12 +116,6 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new ExtractTextPlugin("style.css"),
     //new MinifyPlugin() // when using coffeescript2 in the future
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    })
-
+    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, compress: { warnings: false } })
   ])
 }
