@@ -26,7 +26,7 @@
     "@feathersjs/socketio": "^3.2.2",
     "axios": "^0.18.0",
     "coffeescript": "^2.3.0",
-    "compression": "^1.7.2",
+    "compression": "^1.7.3",
     "cors": "^2.8.4",
     "dayjs": "^1.7.4",
     "feathers-hooks-common": "^4.14.3",

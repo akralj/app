@@ -1,7 +1,7 @@
 var path = require('path')
 var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
-//var MinifyPlugin = require("babel-minify-webpack-plugin")
+var MinifyPlugin = require("babel-minify-webpack-plugin")
 
 
 // get serverPort from main server/config.coffee
@@ -106,7 +106,7 @@ if (process.env.NODE_ENV === 'production') {
     }
   ])
 
-  module.exports.devtool = '#source-map'
+  module.exports.devtool = '#cheap-source-map'
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -115,7 +115,8 @@ if (process.env.NODE_ENV === 'production') {
       }
     }),
     new ExtractTextPlugin("style.css"),
-    //new MinifyPlugin() // when using coffeescript2 in the future
-    new webpack.optimize.UglifyJsPlugin({ sourceMap: true, compress: { warnings: false } })
+    // coffeescript1, if you need to support older browsers
+    //new webpack.optimize.UglifyJsPlugin({ sourceMap: true, compress: { warnings: false } })
+    new MinifyPlugin() // for coffeescript2
   ])
 }

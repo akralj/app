@@ -26,11 +26,11 @@ v-app#inspire
 
 
 <script lang="coffee">
-### throws uglify-js
+# await test
 f = ->
-  await 13
+  await 131313
 f().then (res) -> console.log res
-###
+
 
 exports.default =
   data: ->

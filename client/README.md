@@ -7,7 +7,7 @@ parts which will be reused in different pages
 helper methods
 
 ### IMPORTANT
-- coffeescript needs to stay on 1.x to keep minifier working and to support older browsers (looking at you ie11)
+- runs only in evergreen browsers (sorry internet explorer)  
 
 ## coffee linting
 - loader will look for either a .coffeelint.json or a coffeelint.json in any of the parent directories
