@@ -28,7 +28,7 @@ v-app#inspire
 <script lang="coffee">
 # await test
 f = ->
-  await 131313
+  await 13
 f().then (res) -> console.log res
 
 
