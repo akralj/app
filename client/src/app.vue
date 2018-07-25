@@ -49,7 +49,6 @@ exports.default =
 
 <style src='vuetify/dist/vuetify.min.css'></style>
 <style lang="stylus">
-  //@import './stylus/main'
   
   // print styles. use .no-print class on elements you dont want to show
   @media print
