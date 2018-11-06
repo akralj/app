@@ -35,8 +35,8 @@ git init
 git add .
 git commit -am "initial commit"
 # Add your own remote origin
-git remote set-url origin ssh://git@YourSourcecodeServer/projectName/appName.git
-git push origin
+git remote add origin ssh://git@YourSourcecodeServer/projectName/appName.git
+git push -u origin master
 ```
 
 ## Prepare Production Server
