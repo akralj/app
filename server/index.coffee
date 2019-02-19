@@ -4,7 +4,7 @@
 
 schedule = require('node-schedule')
 
-require("./app").then (app) ->
+require("./app").then((app) ->
   port = app.serverConfig.appPort
   server = app.listen(port)
 
@@ -15,3 +15,4 @@ require("./app").then (app) ->
     schedule.scheduleJob { hour: 5, minute: 55 }, () ->
       app.logger.info("Killed app to compact nedb")
       process.exit()
+).catch (err) -> console.log err
