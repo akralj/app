@@ -50,4 +50,3 @@ module.exports = ->
       all: [hooks.change_id2id]
 
   })
-

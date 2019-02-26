@@ -22,6 +22,8 @@ schema = Joi.object().keys({
 
 module.exports = ->
   app = this
+  collectionName = require("path").basename(__dirname)
+
   db = new NeDb({ filename: "#{app.serverConfig.dbRoot}/logs.db", autoload: true })
 
   validate =
@@ -42,7 +44,9 @@ module.exports = ->
       default: 100
       max: 10000
 
-  app.use "/api/logs", service(opts).extend({
+  app.use("api/#{collectionName}", service(opts))
+
+  app.service("api/#{collectionName}").hooks({
     before:
       create: [ validate ]
       all:    [hooks.changeId2_id]
