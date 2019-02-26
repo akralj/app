@@ -27,12 +27,11 @@ v-app#inspire
 
 <script lang="coffee">
 # await test
-f = ->
-  await 13
-f().then (res) -> console.log res
+#f = -> await 13
+#f().then (res) -> console.log res
 
 
-exports.default =
+export default(
   data: ->
     {
       drawer: true
@@ -43,6 +42,7 @@ exports.default =
       mini: false
       right: null
     }
+)
 
 </script>
 

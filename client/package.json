@@ -22,7 +22,6 @@
     "extract-text-webpack-plugin": "^3.0.0",
     "file-loader": "^1.1.11",
     "jquery-param": "^1.0.1",
-    "less-terrible-coffeelint-loader": "^0.1.5",
     "lodash": "^4.17.11",
     "pug": "^2.0.3",
     "style-loader": "^0.21.0",

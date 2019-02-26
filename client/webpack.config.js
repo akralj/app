@@ -30,12 +30,6 @@ var baseRules =  [
     loader: ['style-loader', 'css-loader', 'stylus-loader']
   },
   {
-    enforce: "pre",
-    test: /\.coffee$/, // include .coffee files
-    loader: "less-terrible-coffeelint-loader",
-    exclude: /node_modules/
-  },
-  {
     test: /\.coffee$/,
     use: [ 'coffee-loader' ]
   }
@@ -64,7 +58,7 @@ module.exports = {
         loader: 'vue-loader',
         options: {
           loaders: {
-            coffee: "coffee-loader!less-terrible-coffeelint-loader"
+            coffee: "coffee-loader"
           }
         }
       }
