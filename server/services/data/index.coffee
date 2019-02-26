@@ -26,8 +26,6 @@ module.exports = ->
 
   db.remove {}, { multi: true }, (err, res) ->
     data = require("./films.json")
-    data.forEach((item) -> item._id = "#{item.id}")
-    #console.log data.length
     db.insert data, (err, res) -> #console.log err, res
 
   opts =
