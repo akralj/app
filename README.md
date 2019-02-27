@@ -1,12 +1,12 @@
-# Feathers Starter Kit & Vuetify Client
+# Feathers Starter Kit & Vuetify or Framework7-Vue Client 
 
 > app dev made easy
 
 
 ## Install prerequisites on dev machine and production server
-- tested with ubuntu 16.04 and node 8.x
+- tested with ubuntu 16.04 and node 8.x or 10.x
 
-### Install node.js(8.x) and git
+### Install node.js(8.x or 10.x) and git
 ``` sh
 # Install dependencies on ubuntu
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
