@@ -26,28 +26,29 @@ v-app#inspire
 
 
 <script lang="coffee">
+import Vue from "vue"
 # await test
 #f = -> await 13
 #f().then (res) -> console.log res
 
 
-export default(
-  data: ->
-    {
-      drawer: true
-      menuItems: [
-        { title: 'Home', icon: 'dashboard'      , link: '/' }
-        { title: 'User', icon: 'question_answer', link: '/user' }
-      ]
-      mini: false
-      right: null
-    }
+export default( Vue.extend({
+    data: ->
+      {
+        drawer: true
+        menuItems: [
+          { title: 'Home', icon: 'dashboard'      , link: '/' }
+          { title: 'User', icon: 'question_answer', link: '/user' }
+        ]
+        mini: false
+        right: null
+      }
+    })
 )
 
 </script>
 
 
-<style src='vuetify/dist/vuetify.min.css'></style>
 <style lang="stylus">
   
   // print styles. use .no-print class on elements you dont want to show

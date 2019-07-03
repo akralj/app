@@ -3,6 +3,7 @@ db
 node_modules
 server/public
 client/src/fonts
+client/.cache/
 assets
 
 .DS_Store

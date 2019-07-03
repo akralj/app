@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Vuetify from 'vuetify'
 Vue.use(Vuetify)
+import 'vuetify/dist/vuetify.min.css'
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
