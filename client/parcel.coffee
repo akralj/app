@@ -1,4 +1,5 @@
-# This is needed to get appPort from main server config and proxy /api requests to server/api
+# This is needed to get appPort from main server config
+# Proxy /api and /assets requests to server app
 #
 #
 
