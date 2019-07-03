@@ -9,12 +9,12 @@ v-content
 
 <script lang="coffee">
 
-exports.default =
+export default(
   data: ->
     {
       myVar: "home"
     }
-
+)
 </script>
 
 
