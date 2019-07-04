@@ -34,17 +34,17 @@ import Vue from "vue"
 
 
 export default( Vue.extend({
-    data: ->
-      {
-        drawer: true
-        menuItems: [
-          { title: 'Home', icon: 'dashboard'      , link: '/' }
-          { title: 'User', icon: 'question_answer', link: '/user' }
-        ]
-        mini: false
-        right: null
-      }
-    })
+  data: ->
+    {
+      drawer: true
+      menuItems: [
+        { title: 'Home', icon: 'dashboard'      , link: '/' }
+        { title: 'User', icon: 'question_answer', link: '/user' }
+      ]
+      mini: false
+      right: null
+    }
+  })
 )
 
 </script>
