@@ -21,6 +21,6 @@ catch error
 app = express()
 app.use '/api'    , proxy(target: "http://localhost:#{serverPort}")
 app.use '/assets' , proxy(target: "http://localhost:#{serverPort}")
-bundler = new Bundler('index.html')
+bundler = new Bundler('src/index.html')
 app.use bundler.middleware()
 app.listen(serverPort - 1 )

@@ -32,6 +32,7 @@ import Vue from "vue"
 #f().then (res) -> console.log res
 
 
+
 export default( Vue.extend({
     data: ->
       {

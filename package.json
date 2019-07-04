@@ -1,6 +1,6 @@
 {
   "name": "test",
-  "version": "0.1.5",
+  "version": "0.2.0",
   "author": "yourName <name@domain.at>",
   "description": "your desc",
   "private": true,
@@ -12,11 +12,10 @@
     "test": "watch 'npm run test-unit' test server --wait 0",
     "test-unit": "coffee test/index.coffee | tap-spec",
     "buildClient": "cd ./client && npm run build",
-    "stage": "npm-run-all buildClient createProductionApp",
-    "deploy": "npm-run-all buildClient createProductionApp uploadAndRestartApp",
+    "stage": "npm-run-all buildClient",
+    "deploy": "npm-run-all buildClient uploadAndRestartApp",
     "client": "cd ./client && npm run dev",
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
-    "createProductionApp": "coffee scripts/createProductionApp.coffee",
     "uploadAndRestartApp": "bash scripts/uploadAndRestartApp.sh"
   },
   "dependencies": {
