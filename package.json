@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "start": "npm run dev",
-    "postinstall": "npm-run-all --parallel installClient",
+    "prepare": "npm-run-all --parallel installClient",
     "installClient": "cd ./client && npm install",
     "dev": "npm-run-all --parallel client server",
     "test": "watch 'npm run test-unit' test server --wait 0",
