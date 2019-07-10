@@ -15,7 +15,9 @@ try
 catch error
   # default serverPort if serverConfig is missing or no server part in project
   # access app at: http://localhost:7777
-  serverPort = 7778
+  console.log error
+  console.log "please add appPort to server/config"
+  process.exit()
 
 
 app = express()
