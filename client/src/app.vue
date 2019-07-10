@@ -33,7 +33,7 @@ import Vue from "vue"
 
 
 
-export default( Vue.extend({
+export default(
   data: ->
     {
       drawer: true
@@ -44,7 +44,7 @@ export default( Vue.extend({
       mini: false
       right: null
     }
-  })
+
 )
 
 </script>
