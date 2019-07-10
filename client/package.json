@@ -5,35 +5,8 @@
   "author": "",
   "private": true,
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --inline --hot",
-    "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
-  },
-  "dependencies": {
-    "vuetify": "^1.5.14"
-  },
-  "devDependencies": {
-    "axios": "^0.18.0",
-    "babel-minify-webpack-plugin": "^0.3.1",
-    "coffee-loader": "^0.9.0",
-    "coffeelint": "^2.1.0",
-    "coffeescript": "^2.3.2",
-    "cross-env": "^5.1.6",
-    "css-loader": "^0.28.11",
-    "extract-text-webpack-plugin": "^3.0.0",
-    "file-loader": "^1.1.11",
-    "jquery-param": "^1.0.1",
-    "lodash": "^4.17.11",
-    "pug": "^2.0.3",
-    "style-loader": "^0.21.0",
-    "stylus": "^0.54.5",
-    "stylus-loader": "^3.0.2",
-    "vue": "^2.6.6",
-    "vue-axios": "^2.1.4",
-    "vue-loader": "^14.2.4",
-    "vue-router": "^3.0.6",
-    "vue-template-compiler": "^2.6.6",
-    "webpack": "^3.12.0",
-    "webpack-dev-server": "^2.11.3"
+    "dev": "cross-env NODE_ENV=development coffee parcel.coffee",
+    "build": "cross-env  NODE_ENV=production parcel build src/index.html --no-content-hash --no-source-maps -d ../server/public"
   },
   "engines": {
     "node": ">= 8.0.0",
@@ -43,5 +16,27 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 10"
-  ]
+  ],
+  "dependencies": {
+    "axios": "^0.19.0",
+    "jquery-param": "^1.0.1",
+    "vue": "^2.6.10",
+    "vue-axios": "^2.1.4",
+    "vue-hot-reload-api": "^2.3.3",
+    "vue-router": "^3.0.6",
+    "vuetify": "^1.5.4"
+  },
+  "devDependencies": {
+    "@mdi/font": "^3.7.95",
+    "@vue/component-compiler-utils": "^3.0.0",
+    "cross-env": "^5.1.6",
+    "cssnano": "^4.1.10",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^0.19.1",
+    "parcel-bundler": "^1.12.3",
+    "parcel-plugin-appcache": "^0.1.1",
+    "pug": "^2.0.4",
+    "stylus": "^0.54.5",
+    "vue-template-compiler": "^2.6.10"
+  }
 }

@@ -26,9 +26,11 @@ v-app#inspire
 
 
 <script lang="coffee">
+import Vue from "vue"
 # await test
 #f = -> await 13
 #f().then (res) -> console.log res
+
 
 
 export default(
@@ -42,12 +44,12 @@ export default(
       mini: false
       right: null
     }
+
 )
 
 </script>
 
 
-<style src='vuetify/dist/vuetify.min.css'></style>
 <style lang="stylus">
   
   // print styles. use .no-print class on elements you dont want to show
