@@ -1,8 +1,8 @@
 <template lang="pug">
 
 v-content
-  v-container
-    v-layout(row)
+  v-container(fluid='', fill-height='')
+    v-layout(align-center='', justify-center='')
       h4 Home, sweet {{myVar}}!
 </template>
 

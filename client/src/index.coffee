@@ -1,7 +1,10 @@
 import Vue from 'vue'
-import Vuetify from 'vuetify'
-Vue.use(Vuetify)
-import 'vuetify/dist/vuetify.min.css'
+import vuetify from './plugins/vuetify' # path to vuetify export
+import 'roboto-fontface/css/roboto/roboto-fontface.css'
+import '@mdi/font/css/materialdesignicons.css'
+
+
+Vue.config.productionTip = false
 
 import axios from 'axios'
 import VueAxios from 'vue-axios'
@@ -15,8 +18,8 @@ import app    from './app.vue'
 import router from './router'
 
 new Vue({
-  el: '#app',
-  router: router,
+  router: router
+  vuetify: vuetify
   render: (h) -> h(app)
-})
+}).$mount('#app')
 
