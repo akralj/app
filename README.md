@@ -55,7 +55,7 @@ There are 2 package.json files in this project, in "./" and "./client/"
 
 # Development Workflow
 
-run dev server
+run dev server on port 7777. Same port as later in production.
 ```
 npm run dev
 ```
