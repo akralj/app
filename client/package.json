@@ -25,15 +25,15 @@
     "vue-axios": "^2.1.4",
     "vue-hot-reload-api": "^2.3.2",
     "vue-router": "^3.1.2",
-    "vuetify": "^2.0.7"
+    "vuetify": "^2.0.9"
   },
   "devDependencies": {
-    "@mdi/font": "^3.9.97",
+    "@mdi/font": "^4.1.95",
     "@vue/component-compiler-utils": "^3.0.0",
     "cross-env": "^5.1.6",
     "cssnano": "^4.1.10",
     "pug": "^2.0.4",
-    "stylus": "^0.54.5",
+    "stylus": "^0.54.6",
     "vue-template-compiler": "^2.6.10"
   }
 }
