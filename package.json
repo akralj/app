@@ -13,7 +13,7 @@
     "test-unit": "coffee test/index.coffee | tap-spec",
     "buildClient": "cd ./client && npm run build",
     "stage": "npm-run-all buildClient stagingServer",
-    "stagingServer": "APP_ENV=production coffee server/index.coffee",
+    "stagingServer": "APP_ENV=staging coffee server/index.coffee",
     "deploy": "npm-run-all buildClient uploadAndRestartApp",
     "client": "cd ./client && npm run dev",
     "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",

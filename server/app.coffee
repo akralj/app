@@ -10,7 +10,7 @@ cors          = require("cors")
 path          = require("path")
 fs            = require("fs")
 middleware    = require("./middleware")
-# client dev server
+# client dev server (parcel bundler with HMR)
 Bundler = require('parcel-bundler')
 bundler = new Bundler(path.join(__dirname, '../client/src/index.html'), {
   outDir:     "client/dist"
@@ -51,7 +51,7 @@ promisedApp = new Promise (resolve) ->
   app.configure(require('./jobs/'))
 
   if process.env.APP_ENV is "production" or process.env.APP_ENV is "staging"
-    app.use("/", feathers.static(path.join(__dirname, "./public")))
+    app.use("/", express.static(path.join(__dirname, "./public")))
   # parcel serves client files in dev mode
   else app.use bundler.middleware()
 

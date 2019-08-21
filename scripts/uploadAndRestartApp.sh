@@ -1,5 +1,5 @@
 #!/bin/env bash
-# DEPLOY_SSH="user@serverName" npm run deploy
+# DEPLOY_SSH="user@serverName" npm run deploy # e.g.  DEPLOY_SSH="a@diolapp02" npm run deploy
 
 # 1. get name prop from package.json
 APP_NAME="$(node -pe "require('./package.json')['name']")"
