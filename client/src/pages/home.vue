@@ -12,7 +12,7 @@ v-content
 export default(
   data: ->
     {
-      myVar: "hubdfadfdsa"
+      myVar: "home"
     }
 )
 </script>

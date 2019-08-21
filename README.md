@@ -61,7 +61,6 @@ npm run dev
 ```
 
 build and run "production" code on staging server on devServer:7778
-useful for testing offline version, devServer:7778/app.html
 ```
 npm run stage
 ```
@@ -77,7 +76,7 @@ run development instance
 npm run dev &
 npm run stage
 ```
-go to http://devServer:7778 and /app.html if it's an offline app
+go to http://devServer:7778 # (not implemnted in parcel setup yet) and /app.html if it's an offline app
 do manual tests from trello
 
 ### Step 2

@@ -31,7 +31,7 @@ v-app#inspire
   v-app-bar(:clipped-left='$vuetify.breakpoint.lgAndUp', app='', color='blue darken-3', dark='')
     v-toolbar-title.ml-0.pl-4(style='width: 300px')
       v-app-bar-nav-icon(@click.stop='drawer = !drawer')
-      span.hidden-sm-and-down Google Contacts
+      span.hidden-sm-and-down App Name
     v-text-field.hidden-sm-and-down(flat='', solo-inverted='', hide-details='', prepend-inner-icon='search', label='Search')
     v-spacer
     v-btn(icon='')

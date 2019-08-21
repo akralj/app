@@ -22,4 +22,3 @@ new Vue({
   vuetify: vuetify
   render: (h) -> h(app)
 }).$mount('#app')
-
