@@ -50,12 +50,11 @@ promisedApp = new Promise (resolve) ->
   # add jobs to app
   app.configure(require('./jobs/'))
 
-  if process.env.APP_ENV is "production" or process.env.APP_ENV is "staging"
-    app.use("/", express.static(path.join(__dirname, "./public")))
   # parcel serves client files in dev mode
-  else
-    console.log process.env.APP_ENV, "envirmoment"
+  if process.env.APP_ENV is "development"
     app.use bundler.middleware()
+  # default is always static files to be sure it is correct in production
+  else app.use("/", express.static(path.join(__dirname, "./public")))
 
   # errors, logging,...
   app.configure(middleware)
