@@ -9,7 +9,9 @@ compression   = require("compression")
 cors          = require("cors")
 path          = require("path")
 fs            = require("fs")
-middleware    = require("./middleware")
+logger        = require('./logger')
+#middleware    = require("./middleware")
+
 # client dev server (parcel bundler with HMR)
 Bundler = require('parcel-bundler')
 bundler = new Bundler(path.join(__dirname, '../client/src/index.html'), {
@@ -25,6 +27,8 @@ promisedApp = new Promise (resolve) ->
   app = express(feathers())
   # add global serverConfig which can be used in services
   app.serverConfig = require("./config")(process.env.APP_ENV)
+  # add logger to app
+  app.logger = logger
 
   app.use(compression())
   app.options("*", cors()).use(cors()) # needed for tests
@@ -56,8 +60,10 @@ promisedApp = new Promise (resolve) ->
   # default is always static files to be sure it is correct in production
   else app.use("/", express.static(path.join(__dirname, "./public")))
 
-  # errors, logging,...
-  app.configure(middleware)
+  # Configure a middleware for 404s and the error handler
+  app.use(express.notFound())
+  app.use(express.errorHandler({ logger }))
+  #app.configure(middleware)
 
   resolve app
 

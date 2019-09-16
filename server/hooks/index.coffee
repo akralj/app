@@ -14,14 +14,14 @@ normalizeId = (obj) ->
 
 module.exports =
   # change id to _id for noSql db
-  changeId2_id: (hook, next) ->
+  changeId2_id: (hook) ->
     if hook?.data?.id
       hook.data._id = hook.data.id
       delete hook.data.id
-    next()
+    return hook
 
   # change _id -> id
-  change_id2id: (hook, next) ->
+  change_id2id: (hook) ->
     # 1. when pagination is enabled
     if _.isArray hook?.result?.data
       hook.result.data = hook.result.data.map (item) -> normalizeId(item)
@@ -31,10 +31,10 @@ module.exports =
     # 3. get request
     else if hook?.result?._id
       hook.result = normalizeId(hook.result)
-    next()
+    return hook
 
 
-  normalizeParams: (hook, next) ->
+  normalizeParams: (hook) ->
     query = hook.params.query
     if hook.params.provider is "rest"
       numberFields = ["duration"]
@@ -45,4 +45,4 @@ module.exports =
         # parse numbers
         if key in numberFields then query[key] = parseInt(query[key])
 
-    next()
+    return hook
