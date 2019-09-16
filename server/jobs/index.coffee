@@ -15,8 +15,9 @@ module.exports = ->
     result = await getData({ app: app })
     console.log "did important work", result
 
-  result = await getData({ app: app })
-  console.log "did important work", result
+  # job tester
+  #result = await getData({ app: app })
+  #console.log "did important work", result
   ###
   # add this if you want logs under /api/logs
   #logs = app.service("/api/logs")

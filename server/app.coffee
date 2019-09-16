@@ -5,12 +5,15 @@
 feathers      = require("@feathersjs/feathers")
 express       = require("@feathersjs/express")
 socketio      = require("@feathersjs/socketio")
+# helmet = require('helmet') # for app protection. try it out some day
 compression   = require("compression")
 cors          = require("cors")
 path          = require("path")
 fs            = require("fs")
 logger        = require('./logger')
-#middleware    = require("./middleware")
+middleware    = require("./middleware")
+appHooks      = require('./app.hooks')
+#authentication = require('./authentication')
 
 # client dev server (parcel bundler with HMR)
 Bundler = require('parcel-bundler')
@@ -30,6 +33,7 @@ promisedApp = new Promise (resolve) ->
   # add logger to app
   app.logger = logger
 
+  # app.use(helmet())
   app.use(compression())
   app.options("*", cors()).use(cors()) # needed for tests
 
@@ -41,9 +45,13 @@ promisedApp = new Promise (resolve) ->
   app.use("/", express.static(path.join(__dirname, "./public")))
 
   app.use(express.json())
-  app.use(express.urlencoded(extended: true))
-  app.configure(socketio())
+  app.use(express.urlencoded({ extended: true }))
   app.configure(express.rest())
+  app.configure(socketio())
+
+  # Configure other middleware (see `middleware/index.js`)
+  app.configure(middleware)
+  #app.configure(authentication)
   
   # add all endpoints
   app.configure(require("./services/config"))
@@ -58,11 +66,14 @@ promisedApp = new Promise (resolve) ->
   if process.env.APP_ENV is "development"
     app.use bundler.middleware()
   # default is always static files to be sure it is correct in production
-  else app.use("/", express.static(path.join(__dirname, "./public")))
-
-  # Configure a middleware for 404s and the error handler
-  app.use(express.notFound())
-  app.use(express.errorHandler({ logger }))
+  else
+    app.use("/", express.static(path.join(__dirname, "./public")))
+    # Configure a middleware for 404s and the error handler (only in production, 'cause we want the errors in dev)
+    app.use(express.notFound())
+    app.use(express.errorHandler({ logger }))
+    
+  # Application hooks that run for every service
+  app.hooks(appHooks)
   #app.configure(middleware)
 
   resolve app
