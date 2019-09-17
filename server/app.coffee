@@ -13,7 +13,7 @@ fs            = require("fs")
 logger        = require('./logger')
 middleware    = require("./middleware")
 appHooks      = require('./app.hooks')
-#authentication = require('./authentication')
+authentication = require('./authentication')
 
 # client dev server (parcel bundler with HMR)
 Bundler = require('parcel-bundler')
@@ -30,8 +30,6 @@ promisedApp = new Promise (resolve) ->
   app = express(feathers())
   # add global serverConfig which can be used in services
   app.serverConfig = require("./config")(process.env.APP_ENV)
-  # add logger to app
-  app.logger = logger
 
   # app.use(helmet())
   app.use(compression())
@@ -55,6 +53,7 @@ promisedApp = new Promise (resolve) ->
   
   # add all endpoints
   app.configure(require("./services/config"))
+  app.configure(require("./services/users"))
   app.configure(require("./services/logs"))
   app.configure(require("./services/data"))
   app.configure(require("./services/method"))
