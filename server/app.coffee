@@ -30,6 +30,8 @@ promisedApp = new Promise (resolve) ->
   app = express(feathers())
   # add global serverConfig which can be used in services
   app.serverConfig = require("./config")(process.env.APP_ENV)
+  # set authentication config to app root
+  app.set('authentication', app.serverConfig.authentication)
 
   # app.use(helmet())
   app.use(compression())
@@ -49,7 +51,7 @@ promisedApp = new Promise (resolve) ->
 
   # Configure other middleware (see `middleware/index.js`)
   app.configure(middleware)
-  #app.configure(authentication)
+  app.configure(authentication)
   
   # add all endpoints
   app.configure(require("./services/config"))

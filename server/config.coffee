@@ -31,6 +31,32 @@ config =
       imageUrl: "/assets/images/contact"
 
 
+  authentication:
+    "entity": "user",
+    "service": "users",
+    "secret": "0EuWRCdfaTtF4Atpi8DHbhPoFu4=",
+    "authStrategies": [
+      "jwt",
+      "local"
+    ],
+    "jwtOptions":
+      "header":
+        "typ": "access"
+
+      "audience": "https://yourdomain.com",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    "local":
+      "usernameField": "email",
+      "passwordField": "password"
+    "oauth":
+      "redirect": "/",
+      "github":
+        "key": "<github oauth key>",
+        "secret": "<github oauth secret>"
+
+
 module.exports = (env) ->
   if env is "development"
     development =
