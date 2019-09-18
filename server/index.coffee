@@ -1,4 +1,4 @@
-#
+# TODO: should we move users and authentication endpoirnt under /api like all other services??
 #
 #
 
