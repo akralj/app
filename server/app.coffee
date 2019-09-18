@@ -75,7 +75,6 @@ promisedApp = new Promise (resolve) ->
     
   # Application hooks that run for every service
   app.hooks(appHooks)
-  #app.configure(middleware)
 
   resolve app
 

@@ -18,23 +18,26 @@ config =
   dbPath: "mongodb://localhost:27017/databaseName" # CHANGE TO YOUR MONGO DB NAME
   dbRoot: path.join(__dirname, "../db") # for nedb
 
-  authConfig:
-    readOnlyGroups: ["someGroup_r", "anotherGroup_r"]
-    readWriteGroups: ["someOtherGroup_rw"]
   mail:
     server:
       host: 'smtp.yourServerName.at'
       port: 25
+  
   services:
+    paginate:
+      default: 44
+      max: 444
     contacts:
       imageFolder: "/apps/assets/images/contact"
       imageUrl: "/assets/images/contact"
 
-
+  #authConfig:
+  #  readOnlyGroups: ["someGroup_r", "anotherGroup_r"]
+  #  readWriteGroups: ["someOtherGroup_rw"]
   authentication:
     "entity": "user",
     "service": "users",
-    "secret": "0EuWRCdfaTtF4Atpi8DHbhPoFu4=",
+    "secret": "changeme", # get this from env var, e.g. "0EuWRCdfaTtF4Atpi8DHbhPoFu4="
     "authStrategies": [
       "jwt",
       "local"

@@ -7,8 +7,7 @@ hooks         = require('../../hooks')
 feathersHooks = require("feathers-hooks-common")
 
 
-module.exports = ->
-  app = this
+module.exports = (app) ->
   collectionName = require("path").basename(__dirname)
 
   # decide if you want to use mongodb for this service in production here
@@ -30,9 +29,7 @@ module.exports = ->
 
   opts =
     Model: db
-    paginate:
-      default: 100
-      max: 100000
+    paginate: app.serverConfig.services.paginate
 
 
   app.use("api/#{collectionName}", service(opts))

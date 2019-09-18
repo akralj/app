@@ -7,16 +7,12 @@ createModel = require('./users.model')
 hooks = require('./users.hooks')
 
 module.exports =  (app) ->
-  Model = createModel(app)
-  paginate = app.get('paginate')
-
-  options = {
-    Model: Model,
-    paginate: paginate
-  }
+  opts =
+    Model: createModel(app)
+    paginate: app.serverConfig.services.paginate
 
   # Initialize our service with any options it requires
-  app.use('/users', new Users(options, app))
+  app.use('/users', new Users(opts, app))
 
   # Get our initialized service so that we can register hooks
   service = app.service('users')

@@ -20,8 +20,7 @@ schema = Joi.object().keys({
   #details:            Joi.object().keys({}).default({})
 }).options({ convert: true, abortEarly: false, stripUnknown: { arrays: false, objects: true } })
 
-module.exports = ->
-  app = this
+module.exports = (app) ->
   collectionName = require("path").basename(__dirname)
 
   db = new NeDb({ filename: "#{app.serverConfig.dbRoot}/logs.db", autoload: true })
@@ -40,9 +39,7 @@ module.exports = ->
 
   opts =
     Model: db
-    paginate:
-      default: 100
-      max: 10000
+    paginate: app.serverConfig.services.paginate
 
   app.use("api/#{collectionName}", service(opts))
 

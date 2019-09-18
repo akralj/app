@@ -1,7 +1,7 @@
 # Application hooks that run for every service
 
-module.exports = {
-  before: {
+module.exports =
+  before:
     all: [],
     find: [],
     get: [],
@@ -9,9 +9,8 @@ module.exports = {
     update: [],
     patch: [],
     remove: []
-  },
 
-  after: {
+  after:
     all: [],
     find: [],
     get: [],
@@ -19,9 +18,8 @@ module.exports = {
     update: [],
     patch: [],
     remove: []
-  },
 
-  error: {
+  error:
     all: [],
     find: [],
     get: [],
@@ -29,5 +27,3 @@ module.exports = {
     update: [],
     patch: [],
     remove: []
-  }
-}
