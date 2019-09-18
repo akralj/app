@@ -1,8 +1,6 @@
-const { authenticate } = require('@feathersjs/authentication').hooks;
+{ authenticate } = require('@feathersjs/authentication').hooks
 
-const {
-  hashPassword, protect
-} = require('@feathersjs/authentication-local').hooks;
+{ hashPassword, protect } = require('@feathersjs/authentication-local').hooks
 
 module.exports = {
   before: {
@@ -16,9 +14,9 @@ module.exports = {
   },
 
   after: {
-    all: [ 
-      // Make sure the password field is never sent to the client
-      // Always must be the last hook
+    all: [
+      # Make sure the password field is never sent to the client
+      # Always must be the last hook
       protect('password')
     ],
     find: [],
@@ -38,4 +36,4 @@ module.exports = {
     patch: [],
     remove: []
   }
-};
+}
