@@ -16,7 +16,7 @@
     "stagingServer": "APP_ENV=staging coffee server/index.coffee",
     "deploy": "npm-run-all buildClient uploadAndRestartApp",
     "client": "cd ./client && npm run dev",
-    "server": "APP_ENV=development supervisor --watch server --ignore server/public server/index.coffee",
+    "server": "APP_ENV=development APP_CONFIG_PATH=/apps/config/app-we-config.coffee supervisor --watch server --ignore server/public server/index.coffee",
     "uploadAndRestartApp": "bash scripts/uploadAndRestartApp.sh"
   },
   "dependencies": {

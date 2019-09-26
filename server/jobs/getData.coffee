@@ -13,7 +13,7 @@ getData = (args) ->
   { app } = args
 
   # do some async work (add your own code here)
-  result = await axios.get("http://localhost:#{app.serverConfig.appPort}/api/config")
+  result = await axios.get("http://localhost:#{app.get("port")}/api/config")
 
   return { message: "successful job", numberOfRecords: result.data.data.length }
 

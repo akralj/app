@@ -30,9 +30,11 @@ promisedApp = new Promise (resolve) ->
   app = express(feathers())
   # add global serverConfig which can be used in services
   app.serverConfig = require("./config")(process.env.APP_ENV)
-  # set authentication config to app root
-  app.set('authentication', app.serverConfig.authentication)
-
+  #console.log JSON.stringify(app.serverConfig, null, 2)
+  # set feathers config to app root
+  for prop in ["host", "port", "authentication"]
+    app.set(prop, app.serverConfig[prop])
+  
   # app.use(helmet())
   app.use(compression())
   app.options("*", cors()).use(cors()) # needed for tests
@@ -41,8 +43,7 @@ promisedApp = new Promise (resolve) ->
   assetsDir = path.join(__dirname, "../assets")
   fs.mkdirSync assetsDir unless fs.existsSync(assetsDir)
   app.use("/assets", express.static(assetsDir))
-  # static app assets
-  app.use("/", express.static(path.join(__dirname, "./public")))
+
 
   app.use(express.json())
   app.use(express.urlencoded({ extended: true }))
@@ -69,9 +70,10 @@ promisedApp = new Promise (resolve) ->
   # default is always static files to be sure it is correct in production
   else
     app.use("/", express.static(path.join(__dirname, "./public")))
-    # Configure a middleware for 404s and the error handler (only in production, 'cause we want the errors in dev)
-    app.use(express.notFound())
-    app.use(express.errorHandler({ logger }))
+  
+  # Configure a middleware for 404s and the error handler (only in production, 'cause we want the errors in dev)
+  app.use(express.notFound())
+  app.use(express.errorHandler({ logger }))
     
   # Application hooks that run for every service
   app.hooks(appHooks)

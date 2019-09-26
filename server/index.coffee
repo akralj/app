@@ -6,7 +6,7 @@ schedule  = require('node-schedule')
 logger    = require('./logger')
 
 require("./app").then((app) ->
-  port = app.serverConfig.appPort
+  port = app.get("port")
   server = app.listen(port)
 
   server.on 'listening', ->
