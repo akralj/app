@@ -29,7 +29,7 @@ module.exports = (app) ->
 
   opts =
     Model: db
-    paginate: app.serverConfig.services.paginate
+    paginate: app.serverConfig.paginate
 
 
   app.use("api/#{collectionName}", service(opts))

@@ -5,9 +5,13 @@
 path        = require("path")
 _           = require("lodash")
 
-config =
+config = {
   port: 7777 # CHANGE TO PRODUCTION PORT HERE
-  host: "localhost" #???? "http://undefined:undefined/oauth/github/callback"
+  host: "localhost"
+  public: "../server/public"
+  paginate:
+    default: 44
+    max: 444
 
   # configure database server here. default is nedb
   db: "nedb" # ["nedb", "mongodb"]
@@ -51,7 +55,7 @@ config =
       readOnlyGroups: ["<someGroup_r>", "<anotherGroup_r>"]
       readWriteGroups: ["<someOtherGroup_rw>"]
 
-
+}
 
 # merge config with production config, which can come from env var
 try
@@ -80,4 +84,4 @@ module.exports = (env) ->
     _.merge(config, testing)
 
   #console.log JSON.stringify(config, null, 2)
-  return Object.freeze config
+  return Object.freeze(config)

@@ -30,7 +30,6 @@ promisedApp = new Promise (resolve) ->
   app = express(feathers())
   # add global serverConfig which can be used in services
   app.serverConfig = require("./config")(process.env.APP_ENV)
-  #console.log JSON.stringify(app.serverConfig, null, 2)
   # set feathers config to app root
   for prop in ["host", "port", "authentication"]
     app.set(prop, app.serverConfig[prop])

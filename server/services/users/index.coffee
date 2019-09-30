@@ -9,7 +9,7 @@ hooks = require('./users.hooks')
 module.exports =  (app) ->
   opts =
     Model: createModel(app)
-    paginate: app.serverConfig.services.paginate
+    paginate: app.serverConfig.paginate
 
   # Initialize our service with any options it requires
   app.use('/users', new Users(opts, app))
