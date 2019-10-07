@@ -15,6 +15,7 @@
     "stage": "npm-run-all buildClient stagingServer",
     "stagingServer": "APP_ENV=staging coffee server/index.coffee",
     "deploy": "npm-run-all buildClient uploadAndRestartApp",
+    "cpApp2app-f7": "rsync -av --delete ../app/ ../app-f7/ --exclude client --exclude .git --exclude node_modules & npm install",
     "client": "cd ./client && npm run dev",
     "server": "APP_ENV=development APP_CONFIG_PATH=/apps/config/app-we-config.coffee supervisor --watch server --ignore server/public server/index.coffee",
     "uploadAndRestartApp": "bash scripts/uploadAndRestartApp.sh"
