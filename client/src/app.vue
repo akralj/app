@@ -5,7 +5,7 @@ f7-app(:params='f7Params')
     f7-view(url='/panel-left/', links-view='.view-main')
   //f7-panel(right='', reveal='', resizable='')
     f7-view(url='/panel-right/')
-  f7-view.safe-areas(url='/', :main='true', :master-detail-breakpoint='800')
+  f7-view.safe-areas(url='/', :main='true', :master-detail-breakpoint='800', :push-state="true", push-state-separator="")
 
 </template>
 
@@ -29,3 +29,13 @@ f7-app(:params='f7Params')
           closeOnEscape: true
   )
 </script>
+
+
+<style lang="stylus">
+
+  // hide back-button on big screens in master-detail view
+  .view-master-detail .navbar-master-detail .link.back,
+  .view-master-detail .page-master-detail .navbar .link.back
+    display: none;
+
+</style>

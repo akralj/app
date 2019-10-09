@@ -40,11 +40,8 @@ export default(
 </script>
 
 
-<style lang="stylus" scoped>
+<style lang="stylus">
 
-  // hide back-button on big screens in master-detail view
-  .view-master-detail .navbar-master-detail .link.back,
-  .view-master-detail .page-master-detail .navbar .link.back
-    display: none;
+// throws error when emtpy
 
 </style>
