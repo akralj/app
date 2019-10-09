@@ -1,3 +1,6 @@
+# workaround to use async functions in parcel
+import 'regenerator-runtime/runtime'
+
 import Vue from 'vue'
 import vuetify from './plugins/vuetify' # path to vuetify export
 import 'roboto-fontface/css/roboto/roboto-fontface.css'
