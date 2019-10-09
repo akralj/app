@@ -1,7 +1,7 @@
 #import Home from './pages/home.vue'
 import PanelLeft from './pages/panel-left.vue'
-import MasterDetailMaster from './pages/master.vue'
-import MasterDetailDetail from './pages/detail.vue'
+import MasterView from './pages/master.vue'
+import DetailView from './pages/detail.vue'
 import NotFound from './pages/404.vue'
 
 # Pages
@@ -16,12 +16,13 @@ export default([
   # Components
   {
     path: '/'
-    component: MasterDetailMaster
+    component: MasterView
     master: true
     detailRoutes: [
       {
-        path: '/master-detail/:id/'
-        component: MasterDetailDetail
+        #path: '/master-detail/:id/'
+        path: '/:id/'
+        component: DetailView
       }
     ]
   }

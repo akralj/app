@@ -15,23 +15,8 @@ f7-page.page-home
   f7-list.searchbar-not-found
     f7-list-item(title='Nothing found')
 </template>
-<script>
-  import { f7Page, f7Navbar, f7NavLeft, f7NavTitle, f7NavTitleLarge, f7NavRight, f7BlockTitle, f7List, f7ListItem, f7Link, f7Searchbar, f7Icon } from 'framework7-vue';
 
-  export default {
-    components: {
-      f7Page,
-      f7Navbar,
-      f7NavLeft,
-      f7NavTitle,
-      f7NavTitleLarge,
-      f7NavRight,
-      f7BlockTitle,
-      f7List,
-      f7ListItem,
-      f7Link,
-      f7Searchbar,
-      f7Icon,
-    },
-  };
+
+<script>
+
 </script>
