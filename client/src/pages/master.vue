@@ -38,7 +38,7 @@ export default(
     try
       res = await @axios.get("/api/data")
       for film in res.data.data
-        console.log film.title = "#{film.name} (#{film.datePublished})"
+        film.title = "#{film.name} (#{film.datePublished})"
         films.push(film)
     catch err
       console.log err

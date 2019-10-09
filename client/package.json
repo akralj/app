@@ -20,8 +20,10 @@
     "framework7": "^5.0.3",
     "framework7-icons": "^3.0.0",
     "framework7-vue": "^5.0.3",
+    "jquery-param": "^1.0.2",
     "material-design-icons": "^3.0.1",
     "vue": "^2.6.10",
+    "vue-axios": "^2.1.5",
     "vue-hot-reload-api": "^2.3.4"
   },
   "devDependencies": {

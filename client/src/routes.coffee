@@ -1,7 +1,7 @@
 #import Home from './pages/home.vue'
 import PanelLeft from './pages/panel-left.vue'
-import MasterDetailMaster from './pages/master-detail-master.vue'
-import MasterDetailDetail from './pages/master-detail-detail.vue'
+import MasterDetailMaster from './pages/master.vue'
+import MasterDetailDetail from './pages/detail.vue'
 import NotFound from './pages/404.vue'
 
 # Pages
