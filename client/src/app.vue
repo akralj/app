@@ -1,7 +1,7 @@
 <template lang="pug">
 
 f7-app(:params='f7Params')
-  f7-panel(left='', cover='', resizable='')
+  f7-panel(left='', cover='', resizable='', :visible-breakpoint="1200")
     f7-view(url='/panel-left/', links-view='.view-main')
   //f7-panel(right='', reveal='', resizable='')
     f7-view(url='/panel-right/')
