@@ -23,14 +23,15 @@
     "jquery-param": "^1.0.2",
     "material-design-icons": "^3.0.1",
     "vue": "^2.6.10",
-    "vue-axios": "^2.1.5",
-    "vue-hot-reload-api": "^2.3.4"
+    "vue-axios": "^2.1.5"
   },
   "devDependencies": {
     "@vue/component-compiler-utils": "^3.0.0",
+    "cross-env": "^6.0.3",
     "coffeescript": "^2.4.1",
     "pug": "^2.0.4",
     "stylus": "^0.54.7",
+    "vue-hot-reload-api": "^2.3.4",
     "vue-template-compiler": "^2.6.10"
   }
 }

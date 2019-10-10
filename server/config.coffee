@@ -71,14 +71,14 @@ module.exports = (env) ->
   
   else if env is "staging"
     staging =
-      port: port + 1
+      port: config.port + 1
       dbRoot: "./test/db"
       db: "nedb"
     _.merge(config, staging)
 
   else if env is "testing"
     testing=
-      port: port + 2
+      port: config.port + 2
       dbRoot: "./test/db"
       db: "nedb"
     _.merge(config, testing)
