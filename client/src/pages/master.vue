@@ -8,7 +8,7 @@ f7-page.page-home
     f7-nav-right
       f7-link.searchbar-enable(data-searchbar='.searchbar-components', icon-ios='f7:search', icon-aurora='f7:search', icon-md='material:search')
     f7-searchbar.searchbar-components(search-container='.components-list', search-in='a', expandable='', :disable-button='!this.$theme.aurora')
-  
+  //f7-block
   f7-list.components-list.searchbar-found(media-list)
     f7-list-item(v-for="film in films", :key="film.id", :reload-detail="true"
       , :link="`/${film.id}/`", :title="film.title", :subtitle="`${film.genre.join(', ')}`")
@@ -23,7 +23,7 @@ f7-page.page-home
 export default(
   data: ->
     films: []
-    
+
   created: ->
     films = @films
     try
