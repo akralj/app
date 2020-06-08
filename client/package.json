@@ -17,9 +17,9 @@
     "not ie <= 10"
   ],
   "dependencies": {
-    "framework7": "^5.7.2",
-    "framework7-icons": "^3.0.0",
-    "framework7-vue": "^5.7.2",
+    "framework7": "^5.7.7",
+    "framework7-icons": "^3.0.1",
+    "framework7-vue": "^5.7.7",
     "jquery-param": "^1.0.5",
     "material-design-icons": "^3.0.1",
     "vue": "^2.6.11",
@@ -29,7 +29,7 @@
     "@vue/component-compiler-utils": "^3.1.2",
     "cross-env": "^7.0.2",
     "coffeescript": "^2.5.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.0",
     "stylus": "^0.54.7",
     "vue-hot-reload-api": "^2.3.4",
     "vue-template-compiler": "^2.6.11"
